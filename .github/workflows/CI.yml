@@ -17,5 +17,8 @@ jobs:
       - name: Check typescript
         run: npm run type:check
 
+      - name: Check prettier
+        run: npm run prettier
+
       - name: Check eslint
         run: npm run lint

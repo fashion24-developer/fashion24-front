@@ -1,4 +1,3 @@
-
 branchName: '/${issue.title[0,25]}/#${issue.number}'
 gitSafeReplacementChar: '_'
 defaultBranch: 'develop'
@@ -11,7 +10,9 @@ branches:
     prefix: setting
   - label: 🐞 BugFix
     prefix: bugfix
-  - label: 💻 Delete
+  - label: 💻 CrossBrowsing
+    prefix: cross
+  - label: 📮 Delete
     prefix: delete
   - label: 📃 Docs
     prefix: docs
@@ -31,4 +32,3 @@ branches:
     prefix: publish
   - label: 📌 Release
     prefix: release
-    

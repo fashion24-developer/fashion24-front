@@ -8,6 +8,16 @@ on:
     types: [closed]
 
 jobs:
+  stale:
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: write
+      issues: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/stale@v5
   create_issue_branch_job:
     runs-on: ubuntu-latest
     steps:

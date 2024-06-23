@@ -1,3 +1,3 @@
-import { useExHandler } from '@/apis/mock-test';
+import { useExHandler } from '@/mock-apis/mock-test';
 
 export const handlers = [...useExHandler];

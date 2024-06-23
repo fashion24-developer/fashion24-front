@@ -12,7 +12,7 @@ branches:
     prefix: bugfix
   - label: 💻 CrossBrowsing
     prefix: cross
-  - label: 📮 Delete
+  - label: ❌ Delete
     prefix: delete
   - label: 📃 Docs
     prefix: docs
@@ -30,5 +30,3 @@ branches:
     prefix: question
   - label: 🎨 Publish
     prefix: publish
-  - label: 📌 Release
-    prefix: release

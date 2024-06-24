@@ -3,8 +3,8 @@ import MockTestComponent from '@/components/MockTestComponent';
 
 export default function Home() {
   return (
-    <MSWProvider>
+    <>
       <MockTestComponent />
-    </MSWProvider>
+    </>
   );
 }

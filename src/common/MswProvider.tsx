@@ -10,8 +10,8 @@ const MSWProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     const init = async () => {
       if (isAPIMockingMode) {
-        const init = await import('@/mocks/index');
-        await init.initMSW();
+        const { worker } = await import('@/mocks/browser');
+        await worker.start();
 
         setIsReady(true);
       }

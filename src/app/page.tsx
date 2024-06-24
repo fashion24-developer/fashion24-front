@@ -1,3 +1,10 @@
+import MSWProvider from '@/common/MswProvider';
+import MockTestComponent from '@/components/MockTestComponent';
+
 export default function Home() {
-  return <div>루트페이지</div>;
+  return (
+    <>
+      <MockTestComponent />
+    </>
+  );
 }

@@ -12,7 +12,6 @@ const MockTestComponent = () => {
 
   useEffect(() => {
     testFunction();
-    console.log('hello world');
   }, []);
 
   return (

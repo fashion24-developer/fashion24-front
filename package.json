@@ -1,7 +1,21 @@
 {
-  "name": "app",
-  "version": "0.1.0",
+  "name": "fashion24-front-end",
+  "version": "0.0.1",
   "private": true,
+  "license": "MIT",
+  "description": "",
+  "contributors": [
+    "JaeJin Lee <jinjinstar3@naver.com>",
+    "Eunwoo Kim <gumman0620@gmail.com>",
+    "Jin Kim <my1luv234@gmail.com>"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/fashion24-developer/fashion24-front"
+  },
+  "engines": {
+    "node": "20.14.0"
+  },
   "scripts": {
     "dev": "env-cmd -f .env.development next dev",
     "build": "next build",

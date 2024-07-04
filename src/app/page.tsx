@@ -1,7 +1,7 @@
 'use client';
 
 import StyledComponentsRegistry from '@/common/Registry';
-import MockTestComponent from '@/components/MockTestComponent';
+import Root from '@/pages/Root';
 import GlobalStyles from '@/styles/GlobalStyled';
 import theme from '@/styles/Theme';
 import { ThemeProvider } from 'styled-components';
@@ -11,7 +11,7 @@ export default function Home() {
     <StyledComponentsRegistry>
       <GlobalStyles />
       <ThemeProvider theme={theme}>
-        <MockTestComponent />
+        <Root />
       </ThemeProvider>
     </StyledComponentsRegistry>
   );

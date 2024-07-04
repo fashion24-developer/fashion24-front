@@ -14,6 +14,9 @@ const nextConfig = {
     return config;
   },
   swcMinify: true,
+  experimental: {
+    swcPlugins: [['@swc-jotai/react-refresh', {}]],
+  },
   compiler: {
     removeConsole: false,
     styledComponents: true,

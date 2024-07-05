@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import MSWProvider from '@/common/MswProvider';
+import JotaiProvider from '@/common/JotaiProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MSWProvider>{children}</MSWProvider>
+        <JotaiProvider>
+          <MSWProvider>{children}</MSWProvider>
+        </JotaiProvider>
       </body>
     </html>
   );

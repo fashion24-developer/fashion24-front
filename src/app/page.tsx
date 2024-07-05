@@ -1,10 +1,10 @@
 'use client';
 
 import StyledComponentsRegistry from '@/common/Registry';
-import Root from '@/pages/Root';
 import GlobalStyles from '@/styles/GlobalStyled';
 import theme from '@/styles/Theme';
 import { ThemeProvider } from 'styled-components';
+import Root from './root/page';
 
 export default function Home() {
   return (

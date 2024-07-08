@@ -21,6 +21,17 @@ const nextConfig = {
     removeConsole: false,
     styledComponents: true,
   },
+  images: {
+    remotePatterns: [
+      //pixabay : 모킹데이터에서 사용할 이미지
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+        port: '',
+        pathname: '/photo/**',
+      },
+    ],
+  },
   eslint: {
     dirs: ['pages', 'utils'], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
   },

@@ -9,12 +9,20 @@ import useCarousel from '@/hooks/useCaruosel';
 
 const FancyOptionsList = () => {
   const [getFancyOptions, setFancyOptions] = useState<FancyCategory[]>([]);
-  const { slideRef, handleSlideNext, handleSlidePrev } =
-    useCarousel(getFancyOptions);
+  const { slideRef, nextSlideHandler, prevSlideHandler } = useCarousel({
+    image: getFancyOptions,
+    transform: 33.3,
+    auto: true,
+  });
 
   const getFancyApi = async () => {
     const response = await FANCY.fancyOptionsListApi();
-    setFancyOptions(response);
+    if (response.length !== 0) {
+      const startData = response[0];
+      const endData = response[response.length - 1];
+      const newList = [endData, ...response, startData];
+      setFancyOptions(newList);
+    }
   };
 
   useEffect(() => {
@@ -23,24 +31,25 @@ const FancyOptionsList = () => {
 
   return (
     <Container display="flex">
-      <button onClick={handleSlidePrev}>prev</button>
+      <button onClick={prevSlideHandler}>prev</button>
       <S.CarouselContainer>
         <div ref={slideRef}>
-          {getFancyOptions.map(data => {
+          {getFancyOptions.map((data, idx) => {
             return (
-              <S.CarouselItem>
+              <S.CarouselItem key={idx}>
                 <Image
                   src={data.categoryImage}
                   width={252}
                   height={480}
                   alt="carousel"
                 />
+                {idx}
               </S.CarouselItem>
             );
           })}
         </div>
       </S.CarouselContainer>
-      <button onClick={handleSlideNext}>next</button>
+      <button onClick={nextSlideHandler}>next</button>
     </Container>
   );
 };

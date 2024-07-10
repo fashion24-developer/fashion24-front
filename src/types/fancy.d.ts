@@ -10,7 +10,7 @@ export interface FancyListType extends FancyCategory {
     id: number;
     name: string;
     price: number;
-    tags: string[];
+    tags: object;
     image: string;
   }[];
 }

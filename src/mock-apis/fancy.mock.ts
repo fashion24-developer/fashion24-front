@@ -11,7 +11,23 @@ const fashionData: FancyListType[] = [
         id: 1,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -19,7 +35,23 @@ const fashionData: FancyListType[] = [
         id: 2,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -27,7 +59,23 @@ const fashionData: FancyListType[] = [
         id: 3,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -35,7 +83,23 @@ const fashionData: FancyListType[] = [
         id: 4,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -51,7 +115,23 @@ const fashionData: FancyListType[] = [
         id: 1,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -59,7 +139,23 @@ const fashionData: FancyListType[] = [
         id: 2,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -67,7 +163,23 @@ const fashionData: FancyListType[] = [
         id: 3,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -75,7 +187,23 @@ const fashionData: FancyListType[] = [
         id: 4,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -91,7 +219,23 @@ const fashionData: FancyListType[] = [
         id: 1,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -99,7 +243,23 @@ const fashionData: FancyListType[] = [
         id: 2,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -107,7 +267,23 @@ const fashionData: FancyListType[] = [
         id: 3,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -115,7 +291,23 @@ const fashionData: FancyListType[] = [
         id: 4,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -131,7 +323,23 @@ const fashionData: FancyListType[] = [
         id: 1,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -139,7 +347,23 @@ const fashionData: FancyListType[] = [
         id: 2,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -147,7 +371,23 @@ const fashionData: FancyListType[] = [
         id: 3,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -155,7 +395,23 @@ const fashionData: FancyListType[] = [
         id: 4,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -171,7 +427,23 @@ const fashionData: FancyListType[] = [
         id: 1,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -179,7 +451,23 @@ const fashionData: FancyListType[] = [
         id: 2,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -187,7 +475,23 @@ const fashionData: FancyListType[] = [
         id: 3,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -195,7 +499,23 @@ const fashionData: FancyListType[] = [
         id: 4,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -211,7 +531,23 @@ const fashionData: FancyListType[] = [
         id: 1,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -219,7 +555,23 @@ const fashionData: FancyListType[] = [
         id: 2,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -227,7 +579,23 @@ const fashionData: FancyListType[] = [
         id: 3,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -235,7 +603,23 @@ const fashionData: FancyListType[] = [
         id: 4,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -251,7 +635,23 @@ const fashionData: FancyListType[] = [
         id: 1,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -259,7 +659,23 @@ const fashionData: FancyListType[] = [
         id: 2,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -267,7 +683,23 @@ const fashionData: FancyListType[] = [
         id: 3,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
@@ -275,7 +707,23 @@ const fashionData: FancyListType[] = [
         id: 4,
         name: '엄청난 주얼리',
         price: 10000,
-        tags: ['엄청난', '주얼리', '목걸이'],
+        tags: [
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+          {
+            id: 121123,
+            name: '엄청난',
+            createdAt: '2024-07-09',
+          },
+        ],
         image:
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },

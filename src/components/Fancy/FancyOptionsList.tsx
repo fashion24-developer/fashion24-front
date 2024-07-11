@@ -13,14 +13,15 @@ const FancyOptionsList = () => {
     image: getFancyOptions,
     transform: 33.3,
     auto: true,
+    count: 3,
   });
 
   const getFancyApi = async () => {
     const response = await FANCY.fancyOptionsListApi();
     if (response.length !== 0) {
-      const startData = response[0];
-      const endData = response[response.length - 1];
-      const newList = [endData, ...response, startData];
+      const startData = response.filter((_, idx) => idx < 3);
+      const endData = response.filter((_, idx) => idx >= response.length - 4);
+      const newList = [...endData, ...response, ...startData];
       setFancyOptions(newList);
     }
   };
@@ -43,7 +44,7 @@ const FancyOptionsList = () => {
                   height={480}
                   alt="carousel"
                 />
-                {idx}
+                {data.id}
               </S.CarouselItem>
             );
           })}

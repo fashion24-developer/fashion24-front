@@ -5,39 +5,45 @@ interface CarouselProp {
   image: Array<object>;
   transform: number;
   auto: boolean;
+  count: number;
 }
 
 /**Carousel hook
  * @params {image} : image가 담긴 배열
  * @params {transform} : 얼만큼씩 이미지를 넘길지 [-33.3]
  * @params {auto} : 자동으로 페이지를 넘길건지, 말건지 결정
+ * @params {count} : 한 페이지에서 보여줄 개수
  */
 const useCarousel = (props: CarouselProp) => {
-  const [currentSlide, setCurrentSlide] = useState<number>(1);
+  const [currentSlide, setCurrentSlide] = useState<number>(props.count + 1);
   const [isAuto, setIsAuto] = useState(props.auto);
   const slideRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const [getTransition, setTransition] = useState(true);
 
   /**다음 이미지 */
   const nextSlideHandler = () => {
     setCurrentSlide(currentSlide + 1);
     setIsAuto(false);
+    setTransition(true);
+
     //마지막 이미지일 경우
-    if (currentSlide === props.image.length - 1) {
-      fakeMotion('');
-      setCurrentSlide(1);
+    if (currentSlide === props.image.length - props.count) {
+      setTransition(false);
+      setCurrentSlide(props.count + 1);
     }
   };
 
   /**이전 이미지 */
   const prevSlideHandler = () => {
     setCurrentSlide(currentSlide - 1);
+    setTransition(true);
     setIsAuto(false);
 
     //맨 앞 사진일 경우
     if (currentSlide - 1 === 0) {
-      fakeMotion('');
-      setCurrentSlide(props.image.length - 1);
+      setTransition(false);
+      setCurrentSlide(props.image.length - props.count - props.count);
     }
   };
 
@@ -51,20 +57,25 @@ const useCarousel = (props: CarouselProp) => {
   /**캐러셀 style지정 */
   useEffect(() => {
     if (slideRef.current !== null) {
-      slideRef.current.style.transition = 'all 0.5s ease-in-out';
+      if (getTransition) {
+        slideRef.current.style.transition = 'all 0.5s ease-in-out';
+      } else {
+        slideRef.current.style.transition = '';
+      }
       slideRef.current.style.transform = `translateX(${-props.transform * currentSlide}%)`;
     }
-  }, [currentSlide]);
+  }, [currentSlide, getTransition]);
 
   /**setInterval를 활용해서 자동으로 캐러셀 넘기기 */
   useEffect(() => {
     if (isAuto) {
       intervalRef.current = setInterval(() => {
         setCurrentSlide(prevSlide => {
-          if (prevSlide === props.image.length - 1) {
-            fakeMotion('');
-            return 1;
+          if (prevSlide === props.image.length - props.count) {
+            setTransition(false);
+            return props.count + 1;
           } else {
+            setTransition(true);
             return prevSlide + 1;
           }
         });
@@ -78,8 +89,9 @@ const useCarousel = (props: CarouselProp) => {
         clearInterval(intervalRef.current);
       }
     };
-  }, [isAuto]);
+  }, [isAuto, props]);
 
+  /**가짜 이미지를 앞 뒤로 끼워넣어서 자연스럽게 변할 수 있도록 함 */
   const fakeMotion = (char: string) => {
     if (slideRef.current !== null) {
       slideRef.current.style.transition = char;

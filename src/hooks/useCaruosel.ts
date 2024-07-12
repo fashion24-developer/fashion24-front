@@ -4,19 +4,17 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 interface CarouselProp {
   image: Array<object>;
   transform: number;
-  auto: boolean;
   count: number;
 }
 
 /**Carousel hook
  * @params {image} : image가 담긴 배열
  * @params {transform} : 얼만큼씩 이미지를 넘길지 [-33.3]
- * @params {auto} : 자동으로 페이지를 넘길건지, 말건지 결정
  * @params {count} : 한 페이지에서 보여줄 개수
  */
 const useCarousel = (props: CarouselProp) => {
   const [currentSlide, setCurrentSlide] = useState<number>(props.count + 1);
-  const [isAuto, setIsAuto] = useState(props.auto);
+  const [isAuto, setIsAuto] = useState(true); //나중에 필요시 추가 예정
   const slideRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [getTransition, setTransition] = useState(true);

@@ -12,7 +12,6 @@ const FancyOptionsList = () => {
   const { slideRef, nextSlideHandler, prevSlideHandler } = useCarousel({
     image: getFancyOptions,
     transform: 33.3,
-    auto: true,
     count: 3,
   });
 

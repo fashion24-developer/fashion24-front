@@ -41,10 +41,12 @@ export const IntroListUnit = styled(motion.div)<IntroUnitProps>`
   height: 75%;
   margin: 1%;
   & > :nth-child(1) {
-    width: ${({ width }) => width};
-    height: ${({ height }) => height};
-    transition: all 0.3s ease-in-out;
-    opacity: ${({ show }) => (show ? 0.3 : 1)};
+    & > :nth-child(1) {
+      width: ${({ width }) => width};
+      height: ${({ height }) => height};
+      transition: all 0.3s ease-in-out;
+      opacity: ${({ show }) => (show ? 0.3 : 1)};
+    }
   }
 `;
 

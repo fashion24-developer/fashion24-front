@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import * as S from './IntroStyled';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const Intro = () => {
   const [yValue, setYValue] = useState(0);
@@ -48,21 +49,23 @@ const Intro = () => {
         animate={{ scale: 1.3, y: yValue - 20 }}
         transition={{ delay: 2, duration: 1 }}
       >
-        <Image
-          onMouseOver={() => setShowUnit1(true)}
-          onMouseOut={() => setShowUnit1(false)}
-          src="/images/intro_whatever.png"
-          width={1000}
-          height={1000}
-          alt="인트로 타이틀"
-        ></Image>
-        <S.HoverGetShowTextBox
-          show={showUnit1}
-          onMouseOver={() => setShowUnit1(true)}
-          onMouseOut={() => setShowUnit1(false)}
-        >
-          Making jewelry
-        </S.HoverGetShowTextBox>
+        <Link href="/whatever">
+          <Image
+            onMouseOver={() => setShowUnit1(true)}
+            onMouseOut={() => setShowUnit1(false)}
+            src="/images/intro_whatever.png"
+            width={1000}
+            height={1000}
+            alt="인트로 타이틀"
+          ></Image>
+          <S.HoverGetShowTextBox
+            show={showUnit1}
+            onMouseOver={() => setShowUnit1(true)}
+            onMouseOut={() => setShowUnit1(false)}
+          >
+            Making jewelry
+          </S.HoverGetShowTextBox>
+        </Link>
       </S.IntroListUnit>
       <S.IntroListUnit
         width="30%"
@@ -72,21 +75,23 @@ const Intro = () => {
         animate={{ scale: 1.3, y: yValue }}
         transition={{ delay: 2, duration: 1 }}
       >
-        <Image
-          onMouseOver={() => setShowUnit2(true)}
-          onMouseOut={() => setShowUnit2(false)}
-          src="/images/intro_fancy.png"
-          width={1000}
-          height={1000}
-          alt="인트로 타이틀"
-        ></Image>
-        <S.HoverGetShowTextBox
-          show={showUnit2}
-          onMouseOver={() => setShowUnit2(true)}
-          onMouseOut={() => setShowUnit2(false)}
-        >
-          Show jewelry
-        </S.HoverGetShowTextBox>
+        <Link href="/fancy">
+          <Image
+            onMouseOver={() => setShowUnit2(true)}
+            onMouseOut={() => setShowUnit2(false)}
+            src="/images/intro_fancy.png"
+            width={1000}
+            height={1000}
+            alt="인트로 타이틀"
+          ></Image>
+          <S.HoverGetShowTextBox
+            show={showUnit2}
+            onMouseOver={() => setShowUnit2(true)}
+            onMouseOut={() => setShowUnit2(false)}
+          >
+            Show jewelry
+          </S.HoverGetShowTextBox>
+        </Link>
       </S.IntroListUnit>
     </S.IntroContainer>
   );

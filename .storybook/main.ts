@@ -4,7 +4,7 @@ const path = require('path');
 const config: StorybookConfig = {
   webpackFinal: async config => {
     if (config.resolve?.alias !== undefined)
-      config.resolve.alias['@'] = path.resolve(__dirname, '../src/');
+      config.resolve.alias['@'] = path.resolve(__dirname, '../src');
     return config;
   },
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -24,6 +24,5 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  staticDirs: ['../public'],
 };
 export default config;

@@ -1,5 +1,5 @@
-import FancyHeader from '@/pages/Fancy/FancyHeader';
-import FancyOptionsList from '@/pages/Fancy/FancyOptionsList';
+import FancyHeader from '@/components/Layouts/Fancy/FancyHeader';
+import FancyOptionsList from '@/components/Layouts/Fancy/FancyOptionsList';
 
 const Fancy = () => {
   return (

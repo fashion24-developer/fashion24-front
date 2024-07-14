@@ -1,7 +1,7 @@
 /**fancy상품 리스트 api type */
 export interface FancyCategory {
   id: number;
-  categoryImage: string;
+  image: string;
   categoryName: string;
 }
 

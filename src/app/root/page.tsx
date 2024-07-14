@@ -1,9 +1,9 @@
-import MockTestComponent from '@/components/MockTestComponent';
+import Intro from '@/components/Intro/Intro';
 
 const Root = () => {
   return (
     <div>
-      <MockTestComponent />
+      <Intro />
     </div>
   );
 };

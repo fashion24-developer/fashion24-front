@@ -1,32 +1,39 @@
 'use client';
-import FANCY from '@/apis/fancy';
-import { FancyCategory } from '@/types/fancy';
 import { useEffect, useState } from 'react';
-import * as S from './FancyStyled';
+import * as S from './CarouselStyled';
 import Image from 'next/image';
 import { Container } from '@/styles/CommonStyled';
 import useCarousel from '@/hooks/useCaruosel';
 
-const FancyOptionsList = () => {
-  const [getFancyOptions, setFancyOptions] = useState<FancyCategory[]>([]);
+export interface CarouselProps<T> {
+  image: Array<T>;
+  transform: number;
+  count: number;
+}
+
+const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
+  const [getCarouselArr, setCarouselArr] = useState<CarouselProps<T>['image']>(
+    []
+  );
   const { slideRef, nextSlideHandler, prevSlideHandler } = useCarousel({
-    image: getFancyOptions,
+    image: getCarouselArr,
     transform: 33.3,
     count: 3,
   });
 
-  const getFancyApi = async () => {
-    const response = await FANCY.fancyOptionsListApi();
-    if (response.length !== 0) {
-      const startData = response.filter((_, idx) => idx < 3);
-      const endData = response.filter((_, idx) => idx >= response.length - 4);
-      const newList = [...endData, ...response, ...startData];
-      setFancyOptions(newList);
+  const getCarouselList = async () => {
+    if (props.image.length !== 0) {
+      const startData = props.image.filter((_, idx) => idx < 3);
+      const endData = props.image.filter(
+        (_, idx) => idx >= props.image.length - 4
+      );
+      const newList = [...endData, ...props.image, ...startData];
+      setCarouselArr(newList);
     }
   };
 
   useEffect(() => {
-    getFancyApi();
+    getCarouselList();
   }, []);
 
   return (
@@ -34,16 +41,15 @@ const FancyOptionsList = () => {
       <button onClick={prevSlideHandler}>prev</button>
       <S.CarouselContainer>
         <div ref={slideRef}>
-          {getFancyOptions.map((data, idx) => {
+          {getCarouselArr.map((data, idx) => {
             return (
               <S.CarouselItem key={idx}>
                 <Image
-                  src={data.categoryImage}
+                  src={data.image}
                   width={252}
                   height={480}
                   alt="carousel"
                 />
-                {data.id}
               </S.CarouselItem>
             );
           })}
@@ -54,4 +60,4 @@ const FancyOptionsList = () => {
   );
 };
 
-export default FancyOptionsList;
+export default Carousel;

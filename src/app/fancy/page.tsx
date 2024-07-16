@@ -1,13 +1,13 @@
 import FancyHeader from '@/components/Layouts/Fancy/FancyHeader';
+import FancyOptionsCarousel from '@/components/Layouts/Fancy/FancyOptionsCarousel';
 import FancyOptionsList from '@/components/Layouts/Fancy/FancyOptionsList';
-import FancyUnitList from '@/components/Layouts/Fancy/FancyUnitList';
 
 const Fancy = () => {
   return (
     <div>
       <FancyHeader />
+      <FancyOptionsCarousel />
       <FancyOptionsList />
-      <FancyUnitList />
     </div>
   );
 };

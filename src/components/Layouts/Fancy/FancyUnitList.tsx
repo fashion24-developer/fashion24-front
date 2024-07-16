@@ -1,69 +1,32 @@
-'use client';
-
-import FANCY from '@/apis/fancy';
 import { FancyListType } from '@/types/fancy';
 import Image from 'next/image';
-import { useCallback, useEffect, useRef, useState } from 'react';
 
-const FancyUnitList = () => {
-  const [getFancyList, setFancyList] = useState<FancyListType[]>([]);
-  const [page, setPage] = useState(0);
-  const obsRef = useRef<HTMLDivElement>(null); //옵저버 state
-  const preventRef = useRef(true); //옵저버 중복 방지
-  const [isFetching, setFetching] = useState(false); //값을 불러왔는지 판다하기 위한 state
-  const [hasNextPage, setNextPage] = useState(true); //다음 페이지가 존재하는지 판별
+interface FancyUnitListProps {
+  data: FancyListType['product'];
+}
 
-  //옵저버 생성
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObs, { threshold: 0.1 });
-    if (obsRef.current) observer.observe(obsRef.current);
-    return () => {
-      observer.disconnect();
-    };
-  }, [obsRef, getFancyList]);
-
-  //옵져버를 만났을 때 실행되는 함수
-  const handleObs = (entries: any) => {
-    const target = entries[0];
-    if (target.isIntersecting) {
-      //옵저버 중복 실행 방지
-      preventRef.current = false; //옵저버 중복 실행 방지
-      setPage(prev => prev + 1); //페이지 값 증가
-    }
-  };
-
-  const fancyListApi = useCallback(async () => {
-    const response = await FANCY.fancyListPagination({
-      page: page,
-      pageSize: 3,
-    });
-    setFancyList(prev => [...prev, ...response.contents]);
-    setNextPage(!response.isLastPage);
-    setFetching(false);
-  }, [page]);
-
-  useEffect(() => {
-    if (hasNextPage && !isFetching) fancyListApi();
-  }, [page]);
-
+const FancyUnitList = ({ data }: FancyUnitListProps) => {
   return (
     <div>
-      <div>
-        {getFancyList.map(data => {
-          return (
+      {data.map((ele, idx) => {
+        return (
+          <div key={idx}>
+            <Image
+              src={ele.image}
+              width={100}
+              height={100}
+              alt={`${ele.id}이미지`}
+            />
+            <div>{ele.name}</div>
+            <div>{ele.price}</div>
             <div>
-              <Image
-                src={data.image}
-                width={100}
-                height={100}
-                alt={`${data.id}이미지`}
-              ></Image>
-              <div>{data.categoryName}</div>
+              {ele.tags.map(element => {
+                return <div>{element.name}</div>;
+              })}
             </div>
-          );
-        })}
-      </div>
-      <div ref={obsRef}></div>
+          </div>
+        );
+      })}
     </div>
   );
 };

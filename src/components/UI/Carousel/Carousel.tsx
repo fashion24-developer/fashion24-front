@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import * as S from './CarouselStyled';
 import Image from 'next/image';
 import { Container } from '@/styles/CommonStyled';
-import useCarousel from '@/hooks/useCaruosel';
+import useCarousel from '@/hooks/useCarousel';
 
 export interface CarouselProps<T> {
   image: Array<T>;

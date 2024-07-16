@@ -2,10 +2,6 @@
 import FANCY from '@/apis/fancy';
 import { FancyCategory } from '@/types/fancy';
 import { useEffect, useState } from 'react';
-import * as S from './FancyStyled';
-import Image from 'next/image';
-import { Container } from '@/styles/CommonStyled';
-import useCarousel from '@/hooks/useCaruosel';
 import Carousel, { CarouselProps } from '@/components/UI/Carousel/Carousel';
 
 const FancyOptionsList = () => {
@@ -16,6 +12,7 @@ const FancyOptionsList = () => {
     transform: 33.3,
     count: 3,
   });
+
 
   const getFancyApi = async () => {
     const response = await FANCY.fancyOptionsListApi();

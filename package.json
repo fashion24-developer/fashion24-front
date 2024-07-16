@@ -5,13 +5,22 @@
   "license": "MIT",
   "description": "",
   "contributors": [
-    "JaeJin Lee <jinjinstar3@naver.com>",
-    "Eunwoo Kim <gumman0620@gmail.com>",
-    "Jin Kim <my1luv234@gmail.com>"
+    {
+      "name": "JaeJin Lee",
+      "email": "jinjinstar3@naver.com"
+    },
+    {
+      "name": "Eunwoo Kim",
+      "email": "gumman0620@gmail.com"
+    },
+    {
+      "name": "Jin Kim",
+      "email": "my1luv234@gmail.com"
+    }
   ],
   "repository": {
     "type": "github",
-    "url": "https://github.com/fashion24-developer/fashion24-front"
+    "url": "git+https://github.com/fashion24-developer/fashion24-front.git"
   },
   "engines": {
     "node": "20.14.0"
@@ -77,5 +86,9 @@
     "workerDirectory": [
       "public"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/fashion24-developer/fashion24-front/issues"
+  },
+  "homepage": "https://github.com/fashion24-developer/fashion24-front#readme"
 }

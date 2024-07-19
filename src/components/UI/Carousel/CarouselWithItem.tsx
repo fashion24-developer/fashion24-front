@@ -12,12 +12,14 @@ export interface CarouselProps<T> {
 }
 
 /**
- * 캐러셀 Component
+ * 캐러셀 Component 중 item이 포함된
  * @param {image} : image가 담긴 배열을 넘겨줍니다.
  * @param {transform} : 한 페이지에 보여줄 이미지 크기
  * @param {count} : 한 페이지에 보여줄 캐러셀의 개 수
  */
-const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
+const CarouselWithItem = <T extends { image: string }>(
+  props: CarouselProps<T>
+) => {
   const [getCarouselArr, setCarouselArr] = useState<CarouselProps<T>['image']>(
     []
   );
@@ -49,13 +51,20 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
         <div ref={slideRef}>
           {getCarouselArr.map((data, idx) => {
             return (
-              <S.CarouselItem key={idx} width="80%" height="100%">
+              <S.CarouselItem key={idx} width="50%" height="60%">
                 <Image
                   src={data.image}
                   width={252}
                   height={480}
                   alt="carousel"
                 />
+                <div>{data.name}</div>
+                <div>{data.price}</div>
+                <div>
+                  {data.tags.map((ele: any) => {
+                    return <div>{ele.name}</div>;
+                  })}
+                </div>
               </S.CarouselItem>
             );
           })}
@@ -66,4 +75,4 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
   );
 };
 
-export default Carousel;
+export default CarouselWithItem;

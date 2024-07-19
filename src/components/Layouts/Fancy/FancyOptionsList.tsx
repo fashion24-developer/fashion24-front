@@ -5,6 +5,7 @@ import { FancyListType } from '@/types/fancy';
 import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import FancyUnitList from './FancyUnitList';
+import * as S from './FancyStyled';
 
 const FancyOptionsList = () => {
   const [getFancyList, setFancyList] = useState<FancyListType[]>([]);
@@ -50,9 +51,9 @@ const FancyOptionsList = () => {
   return (
     <div>
       <div>
-        {getFancyList.map(data => {
-          return (
-            <div>
+        {getFancyList.map((data, idx) => {
+          return idx % 2 === 0 ? (
+            <S.FancyUnitContainer>
               <Image
                 src={data.image}
                 width={100}
@@ -61,7 +62,18 @@ const FancyOptionsList = () => {
               ></Image>
               <div>{data.categoryName}</div>
               <FancyUnitList data={data.product} />
-            </div>
+            </S.FancyUnitContainer>
+          ) : (
+            <S.FancyUnitContainer>
+              <FancyUnitList data={data.product} />
+              <Image
+                src={data.image}
+                width={100}
+                height={100}
+                alt={`${data.id}이미지`}
+              ></Image>
+              <div>{data.categoryName}</div>
+            </S.FancyUnitContainer>
           );
         })}
       </div>

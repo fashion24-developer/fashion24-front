@@ -1,5 +1,5 @@
 import { FancyListType } from '@/types/fancy';
-import Image from 'next/image';
+import CarouselWithItem from '@/components/UI/Carousel/CarouselWithItem';
 
 interface FancyUnitListProps {
   data: FancyListType['product'];
@@ -8,25 +8,7 @@ interface FancyUnitListProps {
 const FancyUnitList = ({ data }: FancyUnitListProps) => {
   return (
     <div>
-      {data.map((ele, idx) => {
-        return (
-          <div key={idx}>
-            <Image
-              src={ele.image}
-              width={100}
-              height={100}
-              alt={`${ele.id}이미지`}
-            />
-            <div>{ele.name}</div>
-            <div>{ele.price}</div>
-            <div>
-              {ele.tags.map(element => {
-                return <div>{element.name}</div>;
-              })}
-            </div>
-          </div>
-        );
-      })}
+      <CarouselWithItem image={data} count={3} transform={33.3} />
     </div>
   );
 };

@@ -11,12 +11,17 @@ export const CarouselContainer = styled.div`
   }
 `;
 
-export const CarouselItem = styled.div`
+interface CarouselItemProps {
+  width: string;
+  height: string;
+}
+
+export const CarouselItem = styled.div<CarouselItemProps>`
   width: 33.3%;
   text-align: center;
   flex: none;
   & > :nth-child(1) {
-    width: 80%;
-    height: 100%;
+    width: ${({ width }) => width};
+    height: ${({ height }) => height};
   }
 `;

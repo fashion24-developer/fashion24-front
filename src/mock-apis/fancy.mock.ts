@@ -739,4 +739,31 @@ export const useFancyHandler = [
     );
     return HttpResponse.json(tempArr);
   }),
+
+  //fancy list infinite scroll
+  http.get('/fancy', ({ request }) => {
+    const url = new URL(request.url);
+
+    const page = Number(url.searchParams.get('page'));
+    const pageSize = Number(url.searchParams.get('pageSize'));
+    const totalCount = fashionData.length;
+    const totalPages = Math.round(totalCount / pageSize);
+
+    const tempObj = {
+      contents: fashionData.slice(page * pageSize, (page + 1) * pageSize),
+      pageNumber: page,
+      pageSize: pageSize,
+      totalPages,
+      totalCount,
+      isLastPage: totalPages <= page,
+      isFirstPage: page === 0,
+    };
+    if (page > pageSize) {
+      return HttpResponse.json(null, {
+        status: 400,
+        statusText: '페이지 수가 전체 페이지수를 넘어감',
+      });
+    }
+    return HttpResponse.json(tempObj);
+  }),
 ];

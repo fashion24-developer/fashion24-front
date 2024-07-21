@@ -1,5 +1,5 @@
 import { FancyListType } from '@/types/fancy';
-import CarouselWithItem from '@/components/UI/Carousel/CarouselWithItem';
+import Carousel from '@/components/UI/Carousel/Carousel';
 
 interface FancyUnitListProps {
   data: FancyListType['product'];
@@ -8,7 +8,7 @@ interface FancyUnitListProps {
 const FancyUnitList = ({ data }: FancyUnitListProps) => {
   return (
     <div>
-      <CarouselWithItem image={data} count={3} transform={33.3} />
+      <Carousel image={data} count={3} transform={33.3} type="withDetail" />
     </div>
   );
 };

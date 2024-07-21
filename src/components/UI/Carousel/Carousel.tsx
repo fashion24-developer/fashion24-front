@@ -16,6 +16,7 @@ export interface CarouselProps<T> {
  * @param {image} : image가 담긴 배열을 넘겨줍니다.
  * @param {transform} : 한 페이지에 보여줄 이미지 크기
  * @param {count} : 한 페이지에 보여줄 캐러셀의 개 수
+ * @param {type} : "detail요소가 들어가는지 들어가지 않는지"
  */
 
 const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {

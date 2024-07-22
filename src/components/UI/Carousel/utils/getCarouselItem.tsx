@@ -7,6 +7,8 @@ const getCarouselItem = (type: 'withDetail' | 'withoutDetail', data: any) => {
     withoutDetail: <StepListWithoutDetail data={data} />,
   } as const;
   return obj[type];
-};
+}; 
 
 export default getCarouselItem;
+
+//react 제공 children props 공부

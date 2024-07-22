@@ -10,6 +10,7 @@ export interface CarouselProps<T> {
   transform: number;
   count: number;
   type: 'withDetail' | 'withoutDetail';
+  isAuto : boolean;
 }
 /**
  * 캐러셀 Component
@@ -17,6 +18,7 @@ export interface CarouselProps<T> {
  * @param {transform} : 한 페이지에 보여줄 이미지 크기
  * @param {count} : 한 페이지에 보여줄 캐러셀의 개 수
  * @param {type} : "detail요소가 들어가는지 들어가지 않는지"
+ * @param {isAuto} : 캐러셀 자동 넘김
  */
 
 const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
@@ -27,6 +29,7 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
     image: getCarouselArr,
     transform: 33.3,
     count: 3,
+    isAuto: props.isAuto
   });
 
   const getCarouselList = async () => {

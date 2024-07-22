@@ -28,6 +28,11 @@ const FANCY = {
     });
     return result.data;
   },
+
+  async fancyUnitItemApi(id: number): Promise<any> {
+    const result: AxiosResponse = await instance.get(`${FANCY.path}/${id}`);
+    return result.data;
+  },
 };
 
 export default FANCY;

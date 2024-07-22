@@ -5,12 +5,14 @@ interface CarouselProp {
   image: Array<object>;
   transform: number;
   count: number;
+  isAuto : boolean
 }
 
 /**Carousel hook
- * @params {image} : image가 담긴 배열
- * @params {transform} : 얼만큼씩 이미지를 넘길지 [-33.3]
- * @params {count} : 한 페이지에서 보여줄 개수
+ * @param {image} : image가 담긴 배열
+ * @param {transform} : 얼만큼씩 이미지를 넘길지 [-33.3]
+ * @param {count} : 한 페이지에서 보여줄 개수
+ * @param {isAuto} : 자동 스크롤 true, false
  */
 const useCarousel = (props: CarouselProp) => {
   const [currentSlide, setCurrentSlide] = useState<number>(props.count + 1);
@@ -48,7 +50,9 @@ const useCarousel = (props: CarouselProp) => {
   /**자동 이미지 넘김 핸들러 */
   useEffect(() => {
     setTimeout(() => {
-      setIsAuto(true);
+      if(props.isAuto) {
+        setIsAuto(true);
+      }
     }, 3000);
   }, [nextSlideHandler, prevSlideHandler]);
 
@@ -66,7 +70,7 @@ const useCarousel = (props: CarouselProp) => {
 
   /**setInterval를 활용해서 자동으로 캐러셀 넘기기 */
   useEffect(() => {
-    if (isAuto) {
+    if (props.isAuto) {
       intervalRef.current = setInterval(() => {
         setCurrentSlide(prevSlide => {
           if (prevSlide === props.image.length - props.count) {

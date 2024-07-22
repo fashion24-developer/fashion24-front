@@ -1,22 +1,26 @@
 'use client';
 import { useEffect, useState } from 'react';
 import * as S from './CarouselStyled';
-import Image from 'next/image';
 import { Container } from '@/styles/CommonStyled';
 import useCarousel from '@/hooks/useCarousel';
+import getCarouselItem from './utils/getCarouselItem';
 
 export interface CarouselProps<T> {
   image: Array<any>;
   transform: number;
   count: number;
+  type: 'withDetail' | 'withoutDetail';
+  isAuto : boolean;
 }
-
 /**
  * 캐러셀 Component
  * @param {image} : image가 담긴 배열을 넘겨줍니다.
  * @param {transform} : 한 페이지에 보여줄 이미지 크기
  * @param {count} : 한 페이지에 보여줄 캐러셀의 개 수
+ * @param {type} : "detail요소가 들어가는지 들어가지 않는지"
+ * @param {isAuto} : 캐러셀 자동 넘김
  */
+
 const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
   const [getCarouselArr, setCarouselArr] = useState<CarouselProps<T>['image']>(
     []
@@ -25,6 +29,7 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
     image: getCarouselArr,
     transform: 33.3,
     count: 3,
+    isAuto: props.isAuto
   });
 
   const getCarouselList = async () => {
@@ -48,16 +53,7 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
       <S.CarouselContainer>
         <div ref={slideRef}>
           {getCarouselArr.map((data, idx) => {
-            return (
-              <S.CarouselItem key={idx} width="80%" height="100%">
-                <Image
-                  src={data.image}
-                  width={252}
-                  height={480}
-                  alt="carousel"
-                />
-              </S.CarouselItem>
-            );
+            return getCarouselItem(props.type, data);
           })}
         </div>
       </S.CarouselContainer>

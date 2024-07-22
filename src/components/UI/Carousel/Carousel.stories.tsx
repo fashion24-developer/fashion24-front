@@ -41,5 +41,7 @@ export const Primary: Story = {
     ],
     transform: 33.3,
     count: 3,
+    type: 'withoutDetail',
+    isAuto: true
   },
 };

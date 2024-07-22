@@ -11,6 +11,8 @@ const FancyOptionsCarousel = () => {
     image: [],
     transform: 33.3,
     count: 3,
+    type: 'withoutDetail',
+    isAuto: true
   });
 
   const getFancyApi = async () => {
@@ -28,9 +30,9 @@ const FancyOptionsCarousel = () => {
   }, []);
 
   return getFancyOptions.image.length !== 0 ? (
-    <Carousel {...getFancyOptions} />
+    <Carousel {...getFancyOptions}></Carousel>
   ) : (
-    <></>
+    <>{/*스켈레톤 UI */}</>
   );
 };
 

@@ -37,3 +37,38 @@ export type FancyPaginationType = {
   isFirstPage: boolean;
   contents: FancyListType[];
 };
+
+//fancy unit type
+export interface FancyUnitType {
+  id: number;
+  name: string;
+  category: string;
+  costPrice: number; //원가
+  price: number; //판매가
+  discountRate: number;
+  description1: string; //소옵션과 함께 들어가는 설명
+  description2: string; //하단에 들어가는 설명
+  quantity: number; //재고량
+  status: 'ACTIVE' | 'INACTIVE';
+  options: {
+    id: number;
+    name: string;
+    subOptions: {
+      id: number;
+      name: string;
+      price: number;
+    }[];
+  }[];
+}
+
+//fancy images type
+export interface FancyImagesType {
+  uuid: number;
+  image: string;
+  order: number;
+}
+
+export interface FancyUnitIntersectionType {
+  data: FancyUnitType;
+  images: FancyImagesType[];
+}

@@ -1,4 +1,9 @@
-import { FancyCategory, FancyListType } from '@/types/fancy';
+import {
+  FancyCategory,
+  FancyImagesType,
+  FancyListType,
+  FancyUnitType,
+} from '@/types/fancy';
 import { http, HttpResponse } from 'msw';
 const fashionData: FancyListType[] = [
   {
@@ -729,678 +734,193 @@ const fashionData: FancyListType[] = [
   },
 ];
 
-const FancyUnitData: FancyListType['product'] = [
+const FancyUnitData: FancyUnitType[] = [
   {
     id: 1,
+    costPrice: 10000,
+    price: 9000,
+    discountRate: 10,
     name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
+    category: 'Office Core',
+    description1:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    description2:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    quantity: 10,
+    status: 'ACTIVE',
+    options: [
       {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
+        id: 1,
+        name: 'color',
+        subOptions: [
+          {
+            id: 1,
+            name: 'red',
+            price: 0,
+          },
+          {
+            id: 2,
+            name: 'blue',
+            price: 0,
+          },
+        ],
       },
       {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
+        id: 2,
+        name: 'size',
+        subOptions: [
+          {
+            id: 3,
+            name: 'Ring No.13',
+            price: 1000,
+          },
+          {
+            id: 4,
+            name: 'Ring No.14',
+            price: 1000,
+          },
+        ],
       },
     ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
   },
   {
     id: 2,
+    costPrice: 10000,
+    price: 9000,
+    discountRate: 10,
     name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
+    category: 'Office Core',
+    description1:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    description2:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    quantity: 10,
+    status: 'ACTIVE',
+    options: [
       {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
+        id: 1,
+        name: 'color',
+        subOptions: [
+          {
+            id: 1,
+            name: 'red',
+            price: 0,
+          },
+          {
+            id: 2,
+            name: 'blue',
+            price: 0,
+          },
+        ],
       },
       {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
+        id: 2,
+        name: 'size',
+        subOptions: [
+          {
+            id: 3,
+            name: 'Ring No.13',
+            price: 1000,
+          },
+          {
+            id: 4,
+            name: 'Ring No.14',
+            price: 1000,
+          },
+        ],
       },
     ],
-    image:
-      'https://cdn.pixabay.com/photo/2019/04/12/20/56/cat-4123233_1280.jpg',
   },
   {
     id: 3,
+    costPrice: 10000,
+    price: 9000,
+    discountRate: 10,
     name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
+    category: 'Office Core',
+    description1:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    description2:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    quantity: 10,
+    status: 'ACTIVE',
+    options: [
       {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
+        id: 1,
+        name: 'color',
+        subOptions: [
+          {
+            id: 1,
+            name: 'red',
+            price: 0,
+          },
+          {
+            id: 2,
+            name: 'blue',
+            price: 0,
+          },
+        ],
       },
       {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
+        id: 2,
+        name: 'size',
+        subOptions: [
+          {
+            id: 3,
+            name: 'Ring No.13',
+            price: 1000,
+          },
+          {
+            id: 4,
+            name: 'Ring No.14',
+            price: 1000,
+          },
+        ],
       },
     ],
-    image:
-      'https://cdn.pixabay.com/photo/2017/08/20/20/48/cat-cat-2663108_1280.jpg',
+  },
+];
+
+const fancyImagesData: FancyImagesType[] = [
+  {
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 1,
   },
   {
-    id: 4,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2020/07/03/13/48/cat-5366394_1280.jpg',
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 2,
   },
   {
-    id: 5,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2017/11/03/04/01/pets-2913316_1280.jpg',
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 3,
   },
   {
-    id: 6,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2017/12/04/11/21/cat-2996769_1280.jpg',
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 4,
   },
   {
-    id: 7,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2018/03/24/17/57/cat-3257338_960_720.jpg',
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 5,
   },
   {
-    id: 8,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2020/04/19/20/33/cat-5065514_1280.jpg',
+    uuid: 2,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 1,
   },
   {
-    id: 9,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2020/06/02/06/52/cat-5249722_1280.jpg',
+    uuid: 2,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 2,
   },
   {
-    id: 10,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2020/05/25/21/06/cat-5220519_1280.jpg',
-  },
-  {
-    id: 11,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2018/04/07/18/12/cat-3299151_1280.jpg',
-  },
-  {
-    id: 12,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 13,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 14,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 15,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 16,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 17,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 18,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 19,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 20,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 21,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 22,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 23,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 24,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 25,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 26,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 27,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
-  },
-  {
-    id: 28,
-    name: '엄청난 주얼리',
-    price: 10000,
-    tags: [
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-      {
-        id: 121123,
-        name: '엄청난',
-        createdAt: '2024-07-09',
-      },
-    ],
-    image:
-      'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+    uuid: 2,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 3,
   },
 ];
 
@@ -1442,6 +962,7 @@ export const useFancyHandler = [
     return HttpResponse.json(tempObj);
   }),
 
+  //fancy unit api
   http.get('/fancy/:id', ({ params }) => {
     const tempArr = FancyUnitData.find(data => data.id === Number(params.id));
     if (!tempArr) {
@@ -1451,5 +972,27 @@ export const useFancyHandler = [
       });
     }
     return HttpResponse.json(tempArr);
+  }),
+
+  //fancy image get api
+  http.get('/fancy/images', ({ request }) => {
+    const url = new URL(request.url);
+    const id = url.searchParams.get('id');
+    if (!id) {
+      return HttpResponse.json(null, {
+        status: 403,
+        statusText: 'id is not defined',
+      });
+    }
+    const tempArr = fancyImagesData.filter(data => {
+      return data.uuid === Number(id);
+    });
+    if (!tempArr) {
+      return HttpResponse.json(null, {
+        status: 404,
+        statusText: '해당 uuid는 존재하지 않습니다.',
+      });
+    }
+    return HttpResponse.json(fancyImagesData);
   }),
 ];

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as S from './FancyStyled';
+import * as S from '../FancyStyled';
 import { FancyListType } from '@/types/fancy';
 import FancyUnitList from './FancyUnitList';
 

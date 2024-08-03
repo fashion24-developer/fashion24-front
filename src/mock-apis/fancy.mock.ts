@@ -1,4 +1,9 @@
-import { FancyCategory, FancyListType } from '@/types/fancy';
+import {
+  FancyCategory,
+  FancyImagesType,
+  FancyListType,
+  FancyUnitType,
+} from '@/types/fancy';
 import { http, HttpResponse } from 'msw';
 const fashionData: FancyListType[] = [
   {
@@ -52,7 +57,7 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2019/04/12/20/56/cat-4123233_1280.jpg',
       },
       {
         id: 3,
@@ -76,7 +81,7 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2017/08/20/20/48/cat-cat-2663108_1280.jpg',
       },
       {
         id: 4,
@@ -100,7 +105,7 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2020/07/03/13/48/cat-5366394_1280.jpg',
       },
     ],
   },
@@ -111,7 +116,7 @@ const fashionData: FancyListType[] = [
     categoryName: 'office core',
     product: [
       {
-        id: 1,
+        id: 5,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -132,10 +137,10 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2017/11/03/04/01/pets-2913316_1280.jpg',
       },
       {
-        id: 2,
+        id: 6,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -156,10 +161,10 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2017/12/04/11/21/cat-2996769_1280.jpg',
       },
       {
-        id: 3,
+        id: 7,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -180,10 +185,10 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2018/03/24/17/57/cat-3257338_960_720.jpg',
       },
       {
-        id: 4,
+        id: 8,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -204,7 +209,7 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2020/04/19/20/33/cat-5065514_1280.jpg',
       },
     ],
   },
@@ -215,7 +220,7 @@ const fashionData: FancyListType[] = [
     categoryName: 'office core',
     product: [
       {
-        id: 1,
+        id: 9,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -236,10 +241,10 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2020/06/02/06/52/cat-5249722_1280.jpg',
       },
       {
-        id: 2,
+        id: 10,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -260,10 +265,10 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2020/05/25/21/06/cat-5220519_1280.jpg',
       },
       {
-        id: 3,
+        id: 11,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -284,10 +289,10 @@ const fashionData: FancyListType[] = [
           },
         ],
         image:
-          'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+          'https://cdn.pixabay.com/photo/2018/04/07/18/12/cat-3299151_1280.jpg',
       },
       {
-        id: 4,
+        id: 12,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -319,7 +324,7 @@ const fashionData: FancyListType[] = [
     categoryName: 'office core',
     product: [
       {
-        id: 1,
+        id: 13,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -343,7 +348,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 2,
+        id: 14,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -367,7 +372,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 3,
+        id: 15,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -391,7 +396,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 4,
+        id: 16,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -423,7 +428,7 @@ const fashionData: FancyListType[] = [
     categoryName: 'office core',
     product: [
       {
-        id: 1,
+        id: 17,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -447,7 +452,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 2,
+        id: 18,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -471,7 +476,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 3,
+        id: 19,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -495,7 +500,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 4,
+        id: 20,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -526,7 +531,7 @@ const fashionData: FancyListType[] = [
     categoryName: 'office core',
     product: [
       {
-        id: 1,
+        id: 21,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -550,7 +555,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 2,
+        id: 22,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -574,7 +579,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 3,
+        id: 23,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -598,7 +603,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 4,
+        id: 24,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -630,7 +635,7 @@ const fashionData: FancyListType[] = [
     categoryName: 'office core',
     product: [
       {
-        id: 1,
+        id: 25,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -654,7 +659,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 2,
+        id: 26,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -678,7 +683,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 3,
+        id: 27,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -702,7 +707,7 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
       {
-        id: 4,
+        id: 28,
         name: '엄청난 주얼리',
         price: 10000,
         tags: [
@@ -726,6 +731,196 @@ const fashionData: FancyListType[] = [
           'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
       },
     ],
+  },
+];
+
+const FancyUnitData: FancyUnitType[] = [
+  {
+    id: 1,
+    costPrice: 10000,
+    price: 9000,
+    discountRate: 10,
+    name: '엄청난 주얼리',
+    category: 'Office Core',
+    description1:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    description2:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    quantity: 10,
+    status: 'ACTIVE',
+    options: [
+      {
+        id: 1,
+        name: 'color',
+        subOptions: [
+          {
+            id: 1,
+            name: 'red',
+            price: 0,
+          },
+          {
+            id: 2,
+            name: 'blue',
+            price: 0,
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: 'size',
+        subOptions: [
+          {
+            id: 3,
+            name: 'Ring No.13',
+            price: 1000,
+          },
+          {
+            id: 4,
+            name: 'Ring No.14',
+            price: 1000,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    costPrice: 10000,
+    price: 9000,
+    discountRate: 10,
+    name: '엄청난 주얼리',
+    category: 'Office Core',
+    description1:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    description2:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    quantity: 10,
+    status: 'ACTIVE',
+    options: [
+      {
+        id: 1,
+        name: 'color',
+        subOptions: [
+          {
+            id: 1,
+            name: 'red',
+            price: 0,
+          },
+          {
+            id: 2,
+            name: 'blue',
+            price: 0,
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: 'size',
+        subOptions: [
+          {
+            id: 3,
+            name: 'Ring No.13',
+            price: 1000,
+          },
+          {
+            id: 4,
+            name: 'Ring No.14',
+            price: 1000,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    costPrice: 10000,
+    price: 9000,
+    discountRate: 10,
+    name: '엄청난 주얼리',
+    category: 'Office Core',
+    description1:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    description2:
+      '<div>Look: Office Core<br>Item : Ring<br>Material : Silver 925, 14K, while gold plating CZ (while)</div>',
+    quantity: 10,
+    status: 'ACTIVE',
+    options: [
+      {
+        id: 1,
+        name: 'color',
+        subOptions: [
+          {
+            id: 1,
+            name: 'red',
+            price: 0,
+          },
+          {
+            id: 2,
+            name: 'blue',
+            price: 0,
+          },
+        ],
+      },
+      {
+        id: 2,
+        name: 'size',
+        subOptions: [
+          {
+            id: 3,
+            name: 'Ring No.13',
+            price: 1000,
+          },
+          {
+            id: 4,
+            name: 'Ring No.14',
+            price: 1000,
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const fancyImagesData: FancyImagesType[] = [
+  {
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 1,
+  },
+  {
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 2,
+  },
+  {
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 3,
+  },
+  {
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 4,
+  },
+  {
+    uuid: 1,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 5,
+  },
+  {
+    uuid: 2,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 1,
+  },
+  {
+    uuid: 2,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 2,
+  },
+  {
+    uuid: 2,
+    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+    order: 3,
   },
 ];
 
@@ -765,5 +960,57 @@ export const useFancyHandler = [
       });
     }
     return HttpResponse.json(tempObj);
+  }),
+
+  //fancy unit api
+  http.get('/fancy/:id', ({ params }) => {
+    const tempArr = FancyUnitData.find(data => data.id === Number(params.id));
+    if (!tempArr) {
+      return HttpResponse.json(null, {
+        status: 404,
+        statusText: '해당 id는 존재하지 않습니다.',
+      });
+    }
+    return HttpResponse.json(tempArr);
+  }),
+
+  //fancy unit images api
+  http.get('/fancy/unit/images', ({ request }) => {
+    try {
+      const url = new URL(request.url);
+      const id = url.searchParams.get('id');
+
+      if (id === null || isNaN(Number(id))) {
+        return HttpResponse.json(
+          { error: 'Invalid ID' },
+          {
+            status: 400,
+            statusText: 'Bad Request',
+          }
+        );
+      }
+
+      const tempArr = fancyImagesData.filter(data => data.uuid === Number(id));
+      if (tempArr.length === 0) {
+        return HttpResponse.json(
+          { error: 'Image not found' },
+          {
+            status: 404,
+            statusText: 'Not Found',
+          }
+        );
+      }
+
+      return HttpResponse.json(tempArr);
+    } catch (error) {
+      console.error('Error in MSW handler:', error);
+      return HttpResponse.json(
+        { error: 'Internal Server Error' },
+        {
+          status: 500,
+          statusText: 'Internal Server Error',
+        }
+      );
+    }
   }),
 ];

@@ -9,8 +9,8 @@ import Root from './root/page';
 export default function Home() {
   return (
     <StyledComponentsRegistry>
-      <GlobalStyles />
       <ThemeProvider theme={theme}>
+        <GlobalStyles />
         <Root />
       </ThemeProvider>
     </StyledComponentsRegistry>

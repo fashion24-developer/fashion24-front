@@ -2,9 +2,11 @@ import { AxiosResponse } from 'axios';
 import instance from './axiosInstance';
 import {
   FancyCategory,
+  FancyImagesType,
   FancyListType,
   FancyPaginationParams,
   FancyPaginationType,
+  FancyUnitType,
 } from '@/types/fancy';
 
 const FANCY = {
@@ -16,6 +18,7 @@ const FANCY = {
     return result.data;
   },
 
+  //fancy 페이지 네이션 api(infinite scroll)
   async fancyListPagination({
     page,
     pageSize,
@@ -26,6 +29,25 @@ const FANCY = {
         pageSize: pageSize,
       },
     });
+    return result.data;
+  },
+
+  //fancy unit 불러오는 api
+  async fancyUnitItemApi(id: number): Promise<FancyUnitType> {
+    const result: AxiosResponse = await instance.get(`${FANCY.path}/${id}`);
+    return result.data;
+  },
+
+  //이미지 불러오는 api
+  async fancyUnitImagesApi(id: number): Promise<FancyImagesType[]> {
+    const result: AxiosResponse = await instance.get(
+      `${FANCY.path}/unit/images`,
+      {
+        params: {
+          id: id,
+        },
+      }
+    );
     return result.data;
   },
 };

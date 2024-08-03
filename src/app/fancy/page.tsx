@@ -1,4 +1,4 @@
-import FancyHeader from '@/components/Layouts/Fancy/list/FancyHeader';
+import FancyHeader from '@/components/Layouts/Fancy/FancyHeader';
 import FancyOptionsCarousel from '@/components/Layouts/Fancy/list/FancyOptionsCarousel';
 import FancyOptionsList from '@/components/Layouts/Fancy/list/FancyOptionsList';
 

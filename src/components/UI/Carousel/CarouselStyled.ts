@@ -21,7 +21,11 @@ export const CarouselItem = styled.div<CarouselItemProps>`
   text-align: center;
   flex: none;
   & > :nth-child(1) {
-    width: ${({ width }) => width};
-    height: ${({ height }) => height};
+    > :nth-child(1) {
+      width: ${({ width }) => width};
+      height: ${({ height }) => height};
+    }
+    text-decoration: none;
+    color: ${theme.text.primary};
   }
 `;

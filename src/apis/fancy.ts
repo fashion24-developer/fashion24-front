@@ -39,12 +39,15 @@ const FANCY = {
   },
 
   //이미지 불러오는 api
-  async fancyImagesApi(id: number): Promise<FancyImagesType[]> {
-    const result: AxiosResponse = await instance.get(`${FANCY.path}/images`, {
-      params: {
-        id: id,
-      },
-    });
+  async fancyUnitImagesApi(id: number): Promise<FancyImagesType[]> {
+    const result: AxiosResponse = await instance.get(
+      `${FANCY.path}/unit/images`,
+      {
+        params: {
+          id: id,
+        },
+      }
+    );
     return result.data;
   },
 };

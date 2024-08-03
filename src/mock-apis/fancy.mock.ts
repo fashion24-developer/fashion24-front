@@ -974,7 +974,8 @@ export const useFancyHandler = [
     return HttpResponse.json(tempArr);
   }),
 
-  http.get('/fancy/images', ({ request }) => {
+  //fancy unit images api
+  http.get('/fancy/unit/images', ({ request }) => {
     try {
       const url = new URL(request.url);
       const id = url.searchParams.get('id');
@@ -1000,10 +1001,7 @@ export const useFancyHandler = [
         );
       }
 
-      return HttpResponse.json(tempArr, {
-        status: 200,
-        statusText: 'OK',
-      });
+      return HttpResponse.json(tempArr);
     } catch (error) {
       console.error('Error in MSW handler:', error);
       return HttpResponse.json(

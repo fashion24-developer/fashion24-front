@@ -2,7 +2,7 @@
 
 import FANCY from '@/apis/fancy';
 import FancyHeader from '@/components/Layouts/Fancy/FancyHeader';
-import FancyUnitBody from '@/components/Layouts/Fancy/FancyUnitBody';
+import FancyUnitBody from '@/components/Layouts/Fancy/unit/FancyUnitBody';
 import {
   FancyImagesType,
   FancyUnitIntersectionType,

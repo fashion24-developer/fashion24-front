@@ -974,25 +974,45 @@ export const useFancyHandler = [
     return HttpResponse.json(tempArr);
   }),
 
-  //fancy image get api
   http.get('/fancy/images', ({ request }) => {
-    const url = new URL(request.url);
-    const id = url.searchParams.get('id');
-    if (!id) {
-      return HttpResponse.json(null, {
-        status: 403,
-        statusText: 'id is not defined',
+    try {
+      const url = new URL(request.url);
+      const id = url.searchParams.get('id');
+
+      if (id === null || isNaN(Number(id))) {
+        return HttpResponse.json(
+          { error: 'Invalid ID' },
+          {
+            status: 400,
+            statusText: 'Bad Request',
+          }
+        );
+      }
+
+      const tempArr = fancyImagesData.filter(data => data.uuid === Number(id));
+      if (tempArr.length === 0) {
+        return HttpResponse.json(
+          { error: 'Image not found' },
+          {
+            status: 404,
+            statusText: 'Not Found',
+          }
+        );
+      }
+
+      return HttpResponse.json(tempArr, {
+        status: 200,
+        statusText: 'OK',
       });
+    } catch (error) {
+      console.error('Error in MSW handler:', error);
+      return HttpResponse.json(
+        { error: 'Internal Server Error' },
+        {
+          status: 500,
+          statusText: 'Internal Server Error',
+        }
+      );
     }
-    const tempArr = fancyImagesData.filter(data => {
-      return data.uuid === Number(id);
-    });
-    if (!tempArr) {
-      return HttpResponse.json(null, {
-        status: 404,
-        statusText: '해당 uuid는 존재하지 않습니다.',
-      });
-    }
-    return HttpResponse.json(fancyImagesData);
   }),
 ];

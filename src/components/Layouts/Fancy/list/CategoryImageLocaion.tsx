@@ -12,8 +12,8 @@ const CategoryImage = (data: { image: string; id: number }) => {
   return (
     <Image
       src={data.image}
-      width={100}
-      height={100}
+      width={160}
+      height={250}
       alt={`${data.id}이미지`}
     ></Image>
   );

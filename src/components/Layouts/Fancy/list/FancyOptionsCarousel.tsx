@@ -9,10 +9,11 @@ const FancyOptionsCarousel = () => {
     CarouselProps<FancyCategory>
   >({
     image: [],
-    transform: 33.3,
-    count: 3,
+    transform: 25,
+    count: 4,
     type: 'withoutDetail',
-    isAuto: true
+    isAuto: true,
+    displayButton: false,
   });
 
   const getFancyApi = async () => {

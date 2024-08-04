@@ -17,12 +17,12 @@ interface CarouselItemProps {
 }
 
 export const CarouselItem = styled.div<CarouselItemProps>`
-  width: 33.3%;
+  width: ${({ width }) => width};
   text-align: center;
   flex: none;
   & > :nth-child(1) {
     > :nth-child(1) {
-      width: ${({ width }) => width};
+      width: 80%;
       height: ${({ height }) => height};
     }
     text-decoration: none;

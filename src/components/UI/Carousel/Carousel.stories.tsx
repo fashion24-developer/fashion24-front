@@ -39,9 +39,10 @@ export const Primary: Story = {
           'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
       },
     ],
-    transform: 33.3,
-    count: 3,
+    transform: 25,
+    count: 5,
     type: 'withoutDetail',
-    isAuto: true
+    isAuto: true,
+    displayButton: true,
   },
 };

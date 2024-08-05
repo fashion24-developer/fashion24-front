@@ -32,4 +32,23 @@ export const Banner = styled.div`
 
 export const FancyUnitContainer = styled.div`
   display: flex;
-`
+  margin: 25px 10%;
+`;
+
+export const ImageContainer = styled.div`
+  background-color: #cccccc;
+  padding: 3px;
+  & > :nth-child(1) {
+  }
+`;
+
+interface ItemBodyContainerProps {
+  position: 'left' | 'right';
+}
+
+export const ItemBodyContainer = styled.div<ItemBodyContainerProps>`
+  & > :nth-child(1) {
+    margin: 5%;
+    text-align: ${({ position }) => position};
+  }
+`;

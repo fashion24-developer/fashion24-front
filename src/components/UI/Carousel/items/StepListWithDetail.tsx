@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const StepListWithDetail = ({ data }: any) => {
   return (
-    <S.CarouselItem key={data.id} width="50%" height="50%">
+    <S.CarouselItem key={data.id} width="33.3%" height="85%">
       <Link
         href={{
           pathname: `/fancy/${data.id}`,
@@ -14,7 +14,7 @@ const StepListWithDetail = ({ data }: any) => {
           height: 'auto',
         }}
       >
-        <Image src={data.image} width={252} height={480} alt="carousel" />
+        <Image src={data.image} width={150} height={250} alt="carousel" />
         <div>{data.name}</div>
         <div>{data.price}</div>
         <div>

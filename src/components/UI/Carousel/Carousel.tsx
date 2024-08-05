@@ -4,13 +4,15 @@ import * as S from './CarouselStyled';
 import { Container } from '@/styles/CommonStyled';
 import useCarousel from '@/hooks/useCarousel';
 import getCarouselItem from './utils/getCarouselItem';
+import getCarouselButton from './utils/getCarouselButton';
 
 export interface CarouselProps<T> {
   image: Array<any>;
   transform: number;
   count: number;
   type: 'withDetail' | 'withoutDetail';
-  isAuto : boolean;
+  isAuto: boolean;
+  displayButton: boolean;
 }
 /**
  * 캐러셀 Component
@@ -19,6 +21,7 @@ export interface CarouselProps<T> {
  * @param {count} : 한 페이지에 보여줄 캐러셀의 개 수
  * @param {type} : "detail요소가 들어가는지 들어가지 않는지"
  * @param {isAuto} : 캐러셀 자동 넘김
+ * @param {displayButton} : 캐러셀 버튼 UI가 보일지 말지
  */
 
 const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
@@ -27,9 +30,9 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
   );
   const { slideRef, nextSlideHandler, prevSlideHandler } = useCarousel({
     image: getCarouselArr,
-    transform: 33.3,
-    count: 3,
-    isAuto: props.isAuto
+    transform: props.transform,
+    count: props.count,
+    isAuto: props.isAuto,
   });
 
   const getCarouselList = async () => {
@@ -49,7 +52,7 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
 
   return (
     <Container display="flex">
-      <button onClick={prevSlideHandler}>prev</button>
+      {getCarouselButton('prev', prevSlideHandler, props.displayButton)}
       <S.CarouselContainer>
         <div ref={slideRef}>
           {getCarouselArr.map((data, idx) => {
@@ -57,7 +60,7 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
           })}
         </div>
       </S.CarouselContainer>
-      <button onClick={nextSlideHandler}>next</button>
+      {getCarouselButton('next', nextSlideHandler, props.displayButton)}
     </Container>
   );
 };

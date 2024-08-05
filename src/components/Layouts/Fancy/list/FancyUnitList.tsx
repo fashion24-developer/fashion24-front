@@ -8,7 +8,14 @@ interface FancyUnitListProps {
 const FancyUnitList = ({ data }: FancyUnitListProps) => {
   return (
     <div>
-      <Carousel image={data} count={3} transform={33.3} type="withDetail" isAuto={false}/>
+      <Carousel
+        image={data}
+        count={3}
+        transform={33.3}
+        type="withDetail"
+        isAuto={false}
+        displayButton={true}
+      />
     </div>
   );
 };

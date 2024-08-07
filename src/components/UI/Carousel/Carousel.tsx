@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import * as S from './CarouselStyled';
+import * as style from './carousel.css';
 import { Container } from '@/styles/CommonStyled';
 import useCarousel from '@/hooks/useCarousel';
 import getCarouselItem from './utils/getCarouselItem';
@@ -53,13 +54,13 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
   return (
     <Container display="flex">
       {getCarouselButton('prev', prevSlideHandler, props.displayButton)}
-      <S.CarouselContainer>
-        <div ref={slideRef}>
+      <div className={style.CarouselContainer}>
+        <div ref={slideRef} className={style.CarouselRef}>
           {getCarouselArr.map((data, idx) => {
             return getCarouselItem(props.type, data);
           })}
         </div>
-      </S.CarouselContainer>
+      </div>
       {getCarouselButton('next', nextSlideHandler, props.displayButton)}
     </Container>
   );

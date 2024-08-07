@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as S from './BannerStyled';
+import * as style from './banner.css';
 
 const Banner = ({
   backGround,
@@ -9,15 +9,16 @@ const Banner = ({
   description: string;
 }) => {
   return (
-    <S.Banner>
+    <div className={style.banner}>
       <Image
+        className={style.bannerChild1}
         src={backGround}
         width={250}
         height={70}
         alt="background image"
       ></Image>
-      <div>{description}</div>
-    </S.Banner>
+      <div className={style.bannerChild2}>{description}</div>
+    </div>
   );
 };
 

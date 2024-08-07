@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import * as S from '../FancyStyled';
+import * as styles from '../fancy.css';
 import { FancyListType } from '@/types/fancy';
 import FancyUnitList from './FancyUnitList';
 
@@ -10,14 +10,14 @@ interface CategoryImageLocationProps {
 
 const CategoryImage = (data: { image: string; id: number }) => {
   return (
-    <S.ImageContainer>
+    <div className={styles.imageContainer}>
       <Image
         src={data.image}
-        width={160}
-        height={250}
+        layout="fill"
+        objectFit="cover"
         alt={`${data.id}이미지`}
-      ></Image>
-    </S.ImageContainer>
+      />
+    </div>
   );
 };
 
@@ -26,24 +26,28 @@ const CategoryItems = (props: {
   data: FancyListType;
 }) => {
   return (
-    <S.ItemBodyContainer position={props.position}>
+    <div className={styles.itemBodyContainer[props.position]}>
       <div>{props.data.categoryName}</div>
       <FancyUnitList data={props.data.product} />
-    </S.ItemBodyContainer>
+    </div>
   );
 };
 
 const CategoryImageLocation = ({ data, side }: CategoryImageLocationProps) => {
-  return side % 2 === 0 ? (
-    <S.FancyUnitContainer>
-      <CategoryImage image={data.image} id={data.id} />
-      <CategoryItems position="left" data={data} />
-    </S.FancyUnitContainer>
-  ) : (
-    <S.FancyUnitContainer>
-      <CategoryItems position="right" data={data} />
-      <CategoryImage image={data.image} id={data.id} />
-    </S.FancyUnitContainer>
+  return (
+    <div className={styles.fancyUnitContainer}>
+      {side % 2 === 0 ? (
+        <>
+          <CategoryImage image={data.image} id={data.id} />
+          <CategoryItems position="left" data={data} />
+        </>
+      ) : (
+        <>
+          <CategoryItems position="right" data={data} />
+          <CategoryImage image={data.image} id={data.id} />
+        </>
+      )}
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import * as S from '../CarouselStyled';
+import * as style from '../carousel.css';
 
 /**캐러셀에 버튼을 불러오기 위한 객체 Util
  * @prop {show} : "prev"(이전 UI) | "next"(다음 UI)
@@ -11,13 +11,13 @@ const getCarouselButton = (
 ) => {
   const obj = {
     prev: (
-      <div>
-        <S.CarouselButtonBox deg="225deg" onClick={onButton} />
+      <div className={style.carouselButton} onClick={onButton}>
+        {'<'}
       </div>
     ),
     next: (
-      <div>
-        <S.CarouselButtonBox deg="45deg" onClick={onButton} />
+      <div className={style.carouselButton} onClick={onButton}>
+        {'>'}
       </div>
     ),
   } as const;

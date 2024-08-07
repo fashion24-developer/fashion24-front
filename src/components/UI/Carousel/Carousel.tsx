@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
-import * as S from './CarouselStyled';
 import * as style from './carousel.css';
 import { Container } from '@/styles/CommonStyled';
 import useCarousel from '@/hooks/useCarousel';
 import getCarouselItem from './utils/getCarouselItem';
 import getCarouselButton from './utils/getCarouselButton';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
 
 export interface CarouselProps<T> {
   image: Array<any>;
@@ -52,7 +52,12 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
   }, []);
 
   return (
-    <Container display="flex">
+    <div
+      style={assignInlineVars({
+        [style.isCarouselButton]: props.displayButton ? 'flex' : 'block',
+      })}
+      className={style.baseCarouselContainer}
+    >
       {getCarouselButton('prev', prevSlideHandler, props.displayButton)}
       <div className={style.CarouselContainer}>
         <div ref={slideRef} className={style.CarouselRef}>
@@ -62,7 +67,7 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
         </div>
       </div>
       {getCarouselButton('next', nextSlideHandler, props.displayButton)}
-    </Container>
+    </div>
   );
 };
 

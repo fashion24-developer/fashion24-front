@@ -1,21 +1,19 @@
 import Image from 'next/image';
-import * as S from '../CarouselStyled';
-import * as style from '../carousel.css';
+import * as styles from '../carousel.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 
 const StepListWithoutDetail = ({ data }: any) => {
   return (
     <div
-      style={assignInlineVars({ [style.CarouselItem]: '25%' })}
+      className={styles.CarouselItemStyle}
+      style={assignInlineVars({ [styles.CarouselItem]: '25%' })}
       key={data.id}
     >
-      <div style={assignInlineVars({ [style.CarouselItemChild]: '50' })}>
-        <Image
-          src={data.image}
-          layout="fill"
-          objectFit="cover"
-          alt="carousel"
-        />
+      <div
+        className={styles.carouselItemImageWrapper}
+        style={assignInlineVars({ [styles.CarouselItemChild]: '200px' })}
+      >
+        <Image src={data.image} alt="carousel" fill />
       </div>
     </div>
   );

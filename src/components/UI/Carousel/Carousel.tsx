@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import * as style from './carousel.css';
-import { Container } from '@/styles/CommonStyled';
 import useCarousel from '@/hooks/useCarousel';
 import getCarouselItem from './utils/getCarouselItem';
 import getCarouselButton from './utils/getCarouselButton';

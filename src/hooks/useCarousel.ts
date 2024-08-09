@@ -58,7 +58,6 @@ const useCarousel = (props: CarouselProp) => {
 
   /**캐러셀 style지정 */
   useEffect(() => {
-    console.log(slideRef.current);
     if (slideRef.current !== null) {
       if (getTransition) {
         slideRef.current.style.transition = 'all 0.5s ease-in-out';

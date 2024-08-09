@@ -1,10 +1,9 @@
 import React from 'react';
-import * as S from './ButtonStyled';
-
+import * as style from './button.css';
 /**
  * Primary UI component for user interaction
  */
 
 export const Button = ({ label }: any) => {
-  return <S.Button>{label}</S.Button>;
+  return <button className={style.button}>{label}</button>;
 };

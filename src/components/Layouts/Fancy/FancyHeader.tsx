@@ -1,5 +1,4 @@
 import Header from '@/components/UI/Header/Header';
-import * as S from './FancyStyled';
 import Banner from '@/components/UI/Banner/Banner';
 const FancyHeader = () => {
   return (

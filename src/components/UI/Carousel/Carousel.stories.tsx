@@ -43,6 +43,6 @@ export const Primary: Story = {
     count: 5,
     type: 'withoutDetail',
     isAuto: true,
-    displayButton: true,
+    displayButton: false,
   },
 };

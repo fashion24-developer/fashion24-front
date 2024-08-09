@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import * as S from './HeaderStyled';
-
+import * as style from './header.css';
 const Header = ({ src }: { src: string }) => {
   return (
-    <S.Header>
+    <div className={style.header}>
       <Image src={src} width={250} height={50} alt="Header Logo"></Image>
-    </S.Header>
+    </div>
   );
 };
 

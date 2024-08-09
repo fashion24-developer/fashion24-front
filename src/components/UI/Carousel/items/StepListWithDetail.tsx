@@ -1,29 +1,35 @@
 import Image from 'next/image';
-import * as S from '../CarouselStyled';
 import Link from 'next/link';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
+import * as styles from '../carousel.css';
 
 const StepListWithDetail = ({ data }: any) => {
   return (
-    <S.CarouselItem key={data.id} width="33.3%" height="85%">
+    <div
+      className={styles.CarouselItemStyle}
+      style={assignInlineVars({ [styles.CarouselItem]: '33.3%' })}
+      key={data.id}
+    >
       <Link
         href={{
           pathname: `/fancy/${data.id}`,
         }}
-        style={{
-          width: 'auto',
-          height: 'auto',
-        }}
+        className={styles.carouselItemLink}
       >
-        <Image src={data.image} width={150} height={250} alt="carousel" />
-        <div>{data.name}</div>
-        <div>{data.price}</div>
-        <div>
-          {data.tags.map((ele: any) => {
-            return <div>{ele.name}</div>;
-          })}
+        <div className={styles.carouselItemImageWrapper}>
+          <Image src={data.image} alt={data.name} fill />
+        </div>
+        <div className={styles.carouselItemName}>{data.name}</div>
+        <div className={styles.carouselItemPrice}>{data.price}</div>
+        <div className={styles.carouselItemTags}>
+          {data.tags.map((ele: any) => (
+            <span key={ele.name} className={styles.carouselItemTag}>
+              {ele.name}
+            </span>
+          ))}
         </div>
       </Link>
-    </S.CarouselItem>
+    </div>
   );
 };
 

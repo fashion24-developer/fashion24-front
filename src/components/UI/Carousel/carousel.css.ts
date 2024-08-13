@@ -25,7 +25,6 @@ export const CarouselContainer = style([
 //ref 값이 들어가는 태그 스타일
 export const CarouselRef = style({
   display: 'flex',
-  transition: 'transform 0.5s ease-in-out',
 });
 
 //캐러셀 각 아이템 최 상위 컨테이너 스타일

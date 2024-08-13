@@ -5,7 +5,7 @@ interface CarouselProp {
   image: Array<object>;
   transform: number;
   count: number;
-  isAuto : boolean
+  isAuto: boolean;
 }
 
 /**Carousel hook
@@ -50,7 +50,7 @@ const useCarousel = (props: CarouselProp) => {
   /**자동 이미지 넘김 핸들러 */
   useEffect(() => {
     setTimeout(() => {
-      if(props.isAuto) {
+      if (props.isAuto) {
         setIsAuto(true);
       }
     }, 3000);

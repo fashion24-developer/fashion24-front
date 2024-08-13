@@ -37,9 +37,9 @@ const Carousel = <T extends { image: string }>(props: CarouselProps<T>) => {
 
   const getCarouselList = async () => {
     if (props.image.length !== 0) {
-      const startData = props.image.filter((_, idx) => idx < 3);
+      const startData = props.image.filter((_, idx) => idx < props.count);
       const endData = props.image.filter(
-        (_, idx) => idx >= props.image.length - 4
+        (_, idx) => idx >= props.image.length - (props.count + 1)
       );
       const newList = [...endData, ...props.image, ...startData];
       setCarouselArr(newList);

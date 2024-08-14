@@ -1,7 +1,7 @@
-import { FancyUnitIntersectionType, FancyUnitType } from '@/types/fancy';
+import { FancyUnitBodyType } from '@/types/fancy';
 import Image from 'next/image';
 
-const FancyUnitBody = (props: FancyUnitType) => {
+const FancyUnitBody = (props: FancyUnitBodyType) => {
   return (
     <div>
       <div>{props.name + '_' + props.category}</div>

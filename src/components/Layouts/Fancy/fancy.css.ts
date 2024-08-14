@@ -1,37 +1,11 @@
 // fancy.css.ts
 
-import { style, styleVariants, globalStyle } from '@vanilla-extract/css';
-import { themeColor } from '@/styles/theme.css';
-
-export const header = style({
-  display: 'flex',
-  justifyContent: 'center',
-  fontSize: '3em',
-  paddingTop: '3%',
-});
-
-export const banner = style({
-  margin: '2% 5%',
-  padding: '2% 15%',
-  height: '4em',
-  border: `2px solid ${themeColor.color.main}`,
-  alignItems: 'center',
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
-});
-
-globalStyle(`${banner} > *:nth-child(1)`, {
-  fontSize: '3em',
-  position: 'absolute',
-  opacity: 0.4,
-});
-
-globalStyle(`${banner} > *:nth-child(2)`, {
-  fontSize: '2em',
-  paddingTop: '0.3em',
-  position: 'absolute',
-});
+import {
+  style,
+  styleVariants,
+  globalStyle,
+  createVar,
+} from '@vanilla-extract/css';
 
 export const fancyUnitContainer = style({
   display: 'flex',
@@ -81,4 +55,22 @@ export const itemBodyContainer = styleVariants({
       alignItems: 'flex-end',
     },
   ],
+});
+
+//fancy unit images container
+export const fancyUnitImagesContainer = style({
+  display: 'flex',
+  width: '40%',
+  height: '100%',
+});
+
+export const imagesListItemContainer = style({
+  padding: '0 5%',
+});
+
+export const opacityVar = createVar();
+
+export const previewListImage = style({
+  opacity: opacityVar,
+  cursor: 'pointer',
 });

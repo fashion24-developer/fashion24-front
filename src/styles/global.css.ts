@@ -10,6 +10,7 @@ export const globalDisplay = style({
   flexDirection: flexDirectionVar,
   justifyContent: justifyContentVar,
   alignItems: alignItemsVar,
+  margin: '0px 5%',
 });
 
 export const imageWrapper = style({

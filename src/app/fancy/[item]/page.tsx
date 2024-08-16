@@ -8,6 +8,7 @@ import { FancyUnitType } from '@/types/fancy';
 import { useEffect, useState } from 'react';
 import * as global from '@/styles/global.css';
 import * as util from '@/styles/utils/globalStyleUtils';
+import FancyUnitBottom from '@/components/Layouts/Fancy/unit/FancyUnitBottom';
 
 const FancyUnitItem = ({ params }: { params: { item: string } }) => {
   const [getUnitItem, setUnitItem] = useState<FancyUnitType>();
@@ -30,14 +31,16 @@ const FancyUnitItem = ({ params }: { params: { item: string } }) => {
         className={global.globalDisplay}
         style={util.createGlobalDisplay({
           displayVar: 'flex',
-          flexDirectionVar: 'row',
-          justifyContentVar: 'center',
-          alignItemVar: 'center',
+          justifyContentVar: 'start',
         })}
       >
         <FancyUnitImages images={getUnitItem.images} />
         <FancyUnitBody {...getUnitItem} />
       </div>
+      <FancyUnitBottom
+        name={getUnitItem.name}
+        description2={getUnitItem.description2}
+      />
     </div>
   );
 };

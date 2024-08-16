@@ -1,5 +1,6 @@
 // fancy.css.ts
 
+import { themeColor } from '@/styles/theme.css';
 import {
   style,
   styleVariants,
@@ -57,6 +58,8 @@ export const itemBodyContainer = styleVariants({
   ],
 });
 
+/*=== Fancy Unit CSS ===*/
+
 //fancy unit images container
 export const fancyUnitImagesContainer = style({
   display: 'flex',
@@ -73,4 +76,79 @@ export const opacityVar = createVar();
 export const previewListImage = style({
   opacity: opacityVar,
   cursor: 'pointer',
+});
+
+//fancy unit body title
+export const bodyContentContainer = style({
+  margin: '0 5%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: '100%',
+});
+
+export const bodyTitleBox = style({
+  fontSize: '2em',
+  fontWeight: 'bold',
+});
+
+export const bodyTitleCategory = style({
+  marginTop: 'auto',
+  fontSize: '1.5em',
+});
+
+export const bodyDescriptionBox = style({
+  margin: '2% 1%',
+});
+
+export const optionItemTitle = style({
+  margin: 'auto 0px',
+  fontSize: '1em',
+});
+
+export const opacityOptionVar = createVar();
+
+export const optionItemBox = style({
+  margin: '1%',
+  fontSize: '1em',
+  padding: '2px 10px',
+  border: `1px solid #000000`,
+  borderRadius: '10px',
+  cursor: 'pointer',
+  opacity: opacityOptionVar,
+  marginBottom: 'auto',
+});
+
+export const priceBox = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-end',
+});
+
+//위랑 형태가 동일해서 나중에 합칠 예정
+export const submitButtonBoxContainer = style({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+  marginTop: 'auto',
+});
+
+export const submitButtonBox = style({
+  textAlign: 'center',
+  width: '10vw',
+  height: 'auto',
+  padding: '10px 20px',
+  border: `1px solid #000000`,
+  margin: '1%',
+  cursor: 'pointer',
+  fontSize: '1em',
+  textWrap: 'balance',
+});
+
+export const bottomContainer = style({
+  margin: '2% 10%',
+});
+
+export const bottomContentDescription = style({
+  margin: '2% 0',
 });

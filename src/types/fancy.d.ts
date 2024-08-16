@@ -37,7 +37,7 @@ export type FancyPaginationType = {
   isFirstPage: boolean;
   contents: FancyListType[];
 };
-export interface FancyUnitBodyType {
+export type FancyUnitBodyType = {
   id: number;
   name: string;
   category: string;
@@ -47,16 +47,18 @@ export interface FancyUnitBodyType {
   description1: string; //소옵션과 함께 들어가는 설명
   quantity: number; //재고량
   status: 'ACTIVE' | 'INACTIVE';
-  options: {
+  options: OptionsType[];
+};
+
+export type OptionsType = {
+  id: number;
+  name: string;
+  subOptions: {
     id: number;
     name: string;
-    subOptions: {
-      id: number;
-      name: string;
-      price: number;
-    }[];
+    price: number;
   }[];
-}
+};
 //fancy unit type
 export interface FancyUnitImagesType {
   images: {

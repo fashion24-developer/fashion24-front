@@ -7,6 +7,6 @@ export interface displayType {
     | 'row-reverse'
     | 'inherit'
     | 'initial';
-  justifyContentVar?: 'center' | 'start' | 'end';
+  justifyContentVar?: 'center' | 'start' | 'end' | 'space-between';
   alignItemVar?: 'center' | 'start' | 'end';
 }

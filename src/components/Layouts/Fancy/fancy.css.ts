@@ -125,7 +125,6 @@ export const priceBox = style({
   alignItems: 'flex-end',
 });
 
-//위랑 형태가 동일해서 나중에 합칠 예정
 export const submitButtonBoxContainer = style({
   display: 'flex',
   flexDirection: 'row',

@@ -1,37 +1,12 @@
 // fancy.css.ts
 
-import { style, styleVariants, globalStyle } from '@vanilla-extract/css';
 import { themeColor } from '@/styles/theme.css';
-
-export const header = style({
-  display: 'flex',
-  justifyContent: 'center',
-  fontSize: '3em',
-  paddingTop: '3%',
-});
-
-export const banner = style({
-  margin: '2% 5%',
-  padding: '2% 15%',
-  height: '4em',
-  border: `2px solid ${themeColor.color.main}`,
-  alignItems: 'center',
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
-});
-
-globalStyle(`${banner} > *:nth-child(1)`, {
-  fontSize: '3em',
-  position: 'absolute',
-  opacity: 0.4,
-});
-
-globalStyle(`${banner} > *:nth-child(2)`, {
-  fontSize: '2em',
-  paddingTop: '0.3em',
-  position: 'absolute',
-});
+import {
+  style,
+  styleVariants,
+  globalStyle,
+  createVar,
+} from '@vanilla-extract/css';
 
 export const fancyUnitContainer = style({
   display: 'flex',
@@ -81,4 +56,98 @@ export const itemBodyContainer = styleVariants({
       alignItems: 'flex-end',
     },
   ],
+});
+
+/*=== Fancy Unit CSS ===*/
+
+//fancy unit images container
+export const fancyUnitImagesContainer = style({
+  display: 'flex',
+  width: '40%',
+  height: '100%',
+});
+
+export const imagesListItemContainer = style({
+  padding: '0 5%',
+});
+
+export const opacityVar = createVar();
+
+export const previewListImage = style({
+  opacity: opacityVar,
+  cursor: 'pointer',
+});
+
+//fancy unit body title
+export const bodyContentContainer = style({
+  margin: '0 5%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: '100%',
+});
+
+export const bodyTitleBox = style({
+  fontSize: '2em',
+  fontWeight: 'bold',
+});
+
+export const bodyTitleCategory = style({
+  marginTop: 'auto',
+  fontSize: '1.5em',
+});
+
+export const bodyDescriptionBox = style({
+  margin: '2% 1%',
+});
+
+export const optionItemTitle = style({
+  margin: 'auto 0px',
+  fontSize: '1em',
+});
+
+export const opacityOptionVar = createVar();
+
+export const optionItemBox = style({
+  margin: '1%',
+  fontSize: '1em',
+  padding: '2px 10px',
+  border: `1px solid #000000`,
+  borderRadius: '10px',
+  cursor: 'pointer',
+  opacity: opacityOptionVar,
+  marginBottom: 'auto',
+});
+
+export const priceBox = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-end',
+});
+
+export const submitButtonBoxContainer = style({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+  marginTop: 'auto',
+});
+
+export const submitButtonBox = style({
+  textAlign: 'center',
+  width: '10vw',
+  height: 'auto',
+  padding: '10px 20px',
+  border: `1px solid #000000`,
+  margin: '1%',
+  cursor: 'pointer',
+  fontSize: '1em',
+  textWrap: 'balance',
+});
+
+export const bottomContainer = style({
+  margin: '2% 10%',
+});
+
+export const bottomContentDescription = style({
+  margin: '2% 0',
 });

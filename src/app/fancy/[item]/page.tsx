@@ -4,36 +4,43 @@ import FANCY from '@/apis/fancy';
 import FancyHeader from '@/components/Layouts/Fancy/FancyHeader';
 import FancyUnitBody from '@/components/Layouts/Fancy/unit/FancyUnitBody';
 import FancyUnitImages from '@/components/Layouts/Fancy/unit/FancyUnitImages';
-import {
-  FancyImagesType,
-  FancyUnitIntersectionType,
-  FancyUnitType,
-} from '@/types/fancy';
+import { FancyUnitType } from '@/types/fancy';
 import { useEffect, useState } from 'react';
+import * as global from '@/styles/global.css';
+import * as util from '@/styles/utils/globalStyleUtils';
+import FancyUnitBottom from '@/components/Layouts/Fancy/unit/FancyUnitBottom';
 
 const FancyUnitItem = ({ params }: { params: { item: string } }) => {
   const [getUnitItem, setUnitItem] = useState<FancyUnitType>();
-  const [getUnitImages, setUnitImages] = useState<FancyImagesType[]>([]);
   const getUnitItemApiHandler = async () => {
     const data = await FANCY.fancyUnitItemApi(Number(params.item));
-    const images = await FANCY.fancyUnitImagesApi(Number(params.item));
     setUnitItem(data);
-    setUnitImages(images);
   };
 
+  //나중에 server component로 변경(현재는 msw라 불가능)
   useEffect(() => {
     getUnitItemApiHandler();
   }, []);
 
+  if (!getUnitItem) return <div>Loading</div>;
+
   return (
     <div>
       <FancyHeader />
-      {getUnitImages ? (
-        <FancyUnitImages images={getUnitImages} />
-      ) : (
-        <div>Loading</div>
-      )}
-      {getUnitItem ? <FancyUnitBody {...getUnitItem} /> : <div>Loading</div>}
+      <div
+        className={global.globalDisplay}
+        style={util.createGlobalDisplay({
+          displayVar: 'flex',
+          justifyContentVar: 'start',
+        })}
+      >
+        <FancyUnitImages images={getUnitItem.images} />
+        <FancyUnitBody {...getUnitItem} />
+      </div>
+      <FancyUnitBottom
+        name={getUnitItem.name}
+        description2={getUnitItem.description2}
+      />
     </div>
   );
 };

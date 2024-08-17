@@ -37,9 +37,7 @@ export type FancyPaginationType = {
   isFirstPage: boolean;
   contents: FancyListType[];
 };
-
-//fancy unit type
-export interface FancyUnitType {
+export type FancyUnitBodyType = {
   id: number;
   name: string;
   category: string;
@@ -47,28 +45,35 @@ export interface FancyUnitType {
   price: number; //판매가
   discountRate: number;
   description1: string; //소옵션과 함께 들어가는 설명
-  description2: string; //하단에 들어가는 설명
   quantity: number; //재고량
   status: 'ACTIVE' | 'INACTIVE';
-  options: {
+  options: OptionsType[];
+};
+
+export type OptionsType = {
+  id: number;
+  name: string;
+  subOptions: {
     id: number;
     name: string;
-    subOptions: {
-      id: number;
-      name: string;
-      price: number;
-    }[];
+    price: number;
+  }[];
+};
+//fancy unit type
+export interface FancyUnitImagesType {
+  images: {
+    url: string;
+    order: number;
   }[];
 }
 
-//fancy images type
-export interface FancyImagesType {
-  uuid: number;
-  image: string;
-  order: number;
+export interface FancyUnitBottomType {
+  name: string;
+  description2: string; //하단에 들어가는 설명
 }
 
-export interface FancyUnitIntersectionType {
-  data: FancyUnitType;
-  images: FancyImagesType[];
-}
+//export interface  FancyUnitType extends FancyUnitBodyType, FancyUnitImagesType { }
+//위 인터페이스는 확장할 때 적절, 아래 타입은, 하나의 타입으로만 국한 될 때 사용
+export type FancyUnitType = FancyUnitBodyType &
+  FancyUnitImagesType &
+  FancyUnitBottomType;

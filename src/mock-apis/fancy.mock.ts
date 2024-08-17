@@ -1,9 +1,4 @@
-import {
-  FancyCategory,
-  FancyImagesType,
-  FancyListType,
-  FancyUnitType,
-} from '@/types/fancy';
+import { FancyCategory, FancyListType, FancyUnitType } from '@/types/fancy';
 import { http, HttpResponse } from 'msw';
 const fashionData: FancyListType[] = [
   {
@@ -782,6 +777,20 @@ const FancyUnitData: FancyUnitType[] = [
         ],
       },
     ],
+    images: [
+      {
+        url: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+        order: 1,
+      },
+      {
+        url: 'https://cdn.pixabay.com/photo/2023/11/02/16/49/cat-8361048_1280.jpg',
+        order: 2,
+      },
+      {
+        url: 'https://cdn.pixabay.com/photo/2023/01/26/10/46/cat-7745585_640.jpg',
+        order: 3,
+      },
+    ],
   },
   {
     id: 2,
@@ -828,6 +837,20 @@ const FancyUnitData: FancyUnitType[] = [
             price: 1000,
           },
         ],
+      },
+    ],
+    images: [
+      {
+        url: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+        order: 1,
+      },
+      {
+        url: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+        order: 2,
+      },
+      {
+        url: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+        order: 3,
       },
     ],
   },
@@ -878,49 +901,20 @@ const FancyUnitData: FancyUnitType[] = [
         ],
       },
     ],
-  },
-];
-
-const fancyImagesData: FancyImagesType[] = [
-  {
-    uuid: 1,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 1,
-  },
-  {
-    uuid: 1,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 2,
-  },
-  {
-    uuid: 1,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 3,
-  },
-  {
-    uuid: 1,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 4,
-  },
-  {
-    uuid: 1,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 5,
-  },
-  {
-    uuid: 2,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 1,
-  },
-  {
-    uuid: 2,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 2,
-  },
-  {
-    uuid: 2,
-    image: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
-    order: 3,
+    images: [
+      {
+        url: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+        order: 1,
+      },
+      {
+        url: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+        order: 2,
+      },
+      {
+        url: 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+        order: 3,
+      },
+    ],
   },
 ];
 
@@ -972,45 +966,5 @@ export const useFancyHandler = [
       });
     }
     return HttpResponse.json(tempArr);
-  }),
-
-  //fancy unit images api
-  http.get('/fancy/unit/images', ({ request }) => {
-    try {
-      const url = new URL(request.url);
-      const id = url.searchParams.get('id');
-
-      if (id === null || isNaN(Number(id))) {
-        return HttpResponse.json(
-          { error: 'Invalid ID' },
-          {
-            status: 400,
-            statusText: 'Bad Request',
-          }
-        );
-      }
-
-      const tempArr = fancyImagesData.filter(data => data.uuid === Number(id));
-      if (tempArr.length === 0) {
-        return HttpResponse.json(
-          { error: 'Image not found' },
-          {
-            status: 404,
-            statusText: 'Not Found',
-          }
-        );
-      }
-
-      return HttpResponse.json(tempArr);
-    } catch (error) {
-      console.error('Error in MSW handler:', error);
-      return HttpResponse.json(
-        { error: 'Internal Server Error' },
-        {
-          status: 500,
-          statusText: 'Internal Server Error',
-        }
-      );
-    }
   }),
 ];

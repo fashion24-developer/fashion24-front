@@ -1,11 +1,11 @@
-import React from 'react';
+import { ClientOnly } from '@/common/ClientOnly';
 import OAuthCallbackPage from '@/components/Layouts/Login/OauthCallback';
 
 const GooglePage = () => {
   return (
-    <div>
+    <ClientOnly>
       <OAuthCallbackPage provider="naver" />
-    </div>
+    </ClientOnly>
   );
 };
 

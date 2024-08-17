@@ -1,12 +1,12 @@
-import React from 'react';
+import { ClientOnly } from '@/common/ClientOnly';
 import OAuthCallbackPage from '@/components/Layouts/Login/OauthCallback';
 
-const KaKaoPage = () => {
+const NaverPage = () => {
   return (
-    <div>
+    <ClientOnly>
       <OAuthCallbackPage provider="naver" />
-    </div>
+    </ClientOnly>
   );
 };
 
-export default KaKaoPage;
+export default NaverPage;

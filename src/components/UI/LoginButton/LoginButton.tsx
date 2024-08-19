@@ -10,16 +10,16 @@ interface LoginButtonProps {
 
 const LoginButton = (props: LoginButtonProps) => {
   return (
-    <Link href={props.redirect} className={style.loginBUttonContainer}>
-      <div className={style.responsiveImageWrapper}>
+    <div className={style.loginButtonContainer}>
+      <Link href={props.redirect}>
         <Image
           src={props.image}
           alt={`${props.provider}로그인버튼`}
           fill
           style={{ objectFit: 'contain' }}
         ></Image>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

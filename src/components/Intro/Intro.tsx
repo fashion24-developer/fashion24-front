@@ -6,30 +6,13 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
+import useResizeY from '@/hooks/uesResizeY';
 
 const Intro = () => {
-  const [yValue, setYValue] = useState(0);
+  const { yValue } = useResizeY();
   const [showUnit1, setShowUnit1] = useState(false);
   const [showUnit2, setShowUnit2] = useState(false);
 
-  //화면 크기에 따라 위치 조정
-  useEffect(() => {
-    const resizeHandler = () => {
-      if (window.innerWidth < 1000) {
-        setYValue(-50); // 작은 화면에서는 덜 이동하도록 조정
-      } else {
-        setYValue(-100); // 큰 화면에서는 더 많이 이동하도록 조정
-      }
-    };
-
-    window.addEventListener('resize', resizeHandler);
-    resizeHandler(); // 초기 설정을 위해 호출
-
-    //언마운트시 clean-up 함수
-    return () => {
-      window.removeEventListener('resize', resizeHandler);
-    };
-  }, []);
   return (
     <div className={style.introContainer}>
       <motion.div

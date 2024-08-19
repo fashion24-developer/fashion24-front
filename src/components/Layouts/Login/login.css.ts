@@ -10,5 +10,9 @@ export const loginContainer = style({
 });
 
 export const loginButtonContainer = style({
-  marginTop: '40%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  marginTop: '50%',
 });

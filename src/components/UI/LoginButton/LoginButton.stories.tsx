@@ -5,6 +5,11 @@ const meta = {
   title: 'components/LoginButton',
   component: LoginButton,
   tags: ['autodocs'],
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+    },
+  },
 } satisfies Meta<typeof LoginButton>;
 
 export default meta;

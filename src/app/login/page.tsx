@@ -1,11 +1,16 @@
+'use client';
+
 import Image from 'next/image';
 import * as style from '@/components/Layouts/Login/login.css';
-import getPresetProviderAuth from '@/components/UI/LoginButton/utils/getProviderAuth';
 import Link from 'next/link';
+import ProviderSelect from '@/components/Layouts/Login/ProviderSelect';
+import { motion } from 'framer-motion';
+import useResizeY from '@/hooks/uesResizeY';
 
 const Login = () => {
+  const { yValue } = useResizeY();
   return (
-    <div className={style.loginContainer}>
+    <motion.div className={style.loginContainer} animate={{ y: yValue }}>
       <Link href="/">
         <Image
           src="/images/intro_logo.png"
@@ -14,12 +19,8 @@ const Login = () => {
           style={{ objectFit: 'contain' }}
         ></Image>
       </Link>
-      <div className={style.loginButtonContainer}>
-        {getPresetProviderAuth('kakao')}
-        {getPresetProviderAuth('naver')}
-        {getPresetProviderAuth('google')}
-      </div>
-    </div>
+      <ProviderSelect />
+    </motion.div>
   );
 };
 

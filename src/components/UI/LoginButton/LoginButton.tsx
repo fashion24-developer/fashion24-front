@@ -1,6 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import * as style from './login.css';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface LoginButtonProps {
   image: string;
@@ -9,17 +11,20 @@ interface LoginButtonProps {
 }
 
 const LoginButton = (props: LoginButtonProps) => {
+  const router = useRouter();
+
   return (
-    <Link href={props.redirect} className={style.loginBUttonContainer}>
-      <div className={style.responsiveImageWrapper}>
-        <Image
-          src={props.image}
-          alt={`${props.provider}로그인버튼`}
-          fill
-          style={{ objectFit: 'contain' }}
-        ></Image>
-      </div>
-    </Link>
+    <div className={style.loginButtonContainer}>
+      <Image
+        onClick={() => router.push(props.redirect)}
+        className={style.imageStyleBox}
+        src={props.image}
+        alt={`${props.provider}로그인버튼`}
+        width={0}
+        height={0}
+        sizes="100vw"
+      ></Image>
+    </div>
   );
 };
 

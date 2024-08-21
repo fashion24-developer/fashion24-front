@@ -27,13 +27,7 @@ const FancyUnitItem = ({ params }: { params: { item: string } }) => {
   return (
     <div>
       <FancyHeader />
-      <div
-        className={global.globalDisplay}
-        style={util.createGlobalDisplay({
-          displayVar: 'flex',
-          justifyContentVar: 'start',
-        })}
-      >
+      <div style={{ display: 'flex', margin: '0px 5%' }}>
         <FancyUnitImages images={getUnitItem.images} />
         <FancyUnitBody {...getUnitItem} />
       </div>

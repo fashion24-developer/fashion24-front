@@ -28,7 +28,10 @@ const FancyUnitItem = ({ params }: { params: { item: string } }) => {
     <div>
       <FancyHeader />
       <div style={{ display: 'flex', margin: '0px 5%' }}>
-        <FancyUnitImages images={getUnitItem.images} />
+        <FancyUnitImages
+          images={getUnitItem.images}
+          options={getUnitItem.options}
+        />
         <FancyUnitBody {...getUnitItem} />
       </div>
       <FancyUnitBottom

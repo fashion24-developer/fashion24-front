@@ -1,12 +1,12 @@
 // fancy.css.ts
 
-import { themeColor } from '@/styles/theme.css';
 import {
   style,
   styleVariants,
   globalStyle,
   createVar,
 } from '@vanilla-extract/css';
+import { create } from 'domain';
 
 export const fancyUnitContainer = style({
   display: 'flex',
@@ -75,6 +75,20 @@ export const opacityVar = createVar();
 
 export const previewListImage = style({
   opacity: opacityVar,
+  cursor: 'pointer',
+});
+
+//fancy unit color option
+
+export const colorOptionVar = createVar();
+
+export const colorOption = style({
+  width: 50,
+  height: 50,
+  border: '1px solid #000000',
+  borderRadius: '50%',
+  background: `linear-gradient(0.25turn, ${colorOptionVar}, #ffffff)`,
+  margin: '4% 0',
   cursor: 'pointer',
 });
 

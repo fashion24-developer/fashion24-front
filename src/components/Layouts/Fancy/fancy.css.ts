@@ -1,12 +1,12 @@
 // fancy.css.ts
 
-import { themeColor } from '@/styles/theme.css';
 import {
   style,
   styleVariants,
   globalStyle,
   createVar,
 } from '@vanilla-extract/css';
+import { create } from 'domain';
 
 export const fancyUnitContainer = style({
   display: 'flex',
@@ -78,13 +78,24 @@ export const previewListImage = style({
   cursor: 'pointer',
 });
 
-//fancy unit body title
+//fancy unit color option
+
+export const colorOptionVar = createVar();
+
+export const colorOption = style({
+  width: 50,
+  height: 50,
+  border: '1px solid #000000',
+  borderRadius: '50%',
+  background: `linear-gradient(0.25turn, ${colorOptionVar}, #ffffff)`,
+  margin: '4% 0',
+  cursor: 'pointer',
+});
+
+//fancy unit body
 export const bodyContentContainer = style({
-  margin: '0 5%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  height: '100%',
+  width: '50%',
+  margin: '4% auto auto 3%',
 });
 
 export const bodyTitleBox = style({
@@ -119,10 +130,16 @@ export const optionItemBox = style({
   marginBottom: 'auto',
 });
 
+export const resultContainer = style({
+  width: '100%',
+  height: 'auto',
+  marginTop: '25%',
+});
+
 export const priceBox = style({
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-end',
+  justifyContent: 'flex-end',
+  fontSize: '2em',
 });
 
 export const submitButtonBoxContainer = style({
@@ -131,6 +148,8 @@ export const submitButtonBoxContainer = style({
   justifyContent: 'flex-end',
   marginTop: 'auto',
 });
+
+export const buttonColorVar = createVar();
 
 export const submitButtonBox = style({
   textAlign: 'center',
@@ -142,8 +161,10 @@ export const submitButtonBox = style({
   cursor: 'pointer',
   fontSize: '1em',
   textWrap: 'balance',
+  color: buttonColorVar,
 });
 
+//bottom description
 export const bottomContainer = style({
   margin: '2% 10%',
 });

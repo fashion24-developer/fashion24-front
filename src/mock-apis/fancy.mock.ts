@@ -729,7 +729,7 @@ const fashionData: FancyListType[] = [
   },
 ];
 
-const FancyUnitData: FancyUnitType[] = [
+export const FancyUnitData: FancyUnitType[] = [
   {
     id: 1,
     costPrice: 10000,

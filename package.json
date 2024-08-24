@@ -36,6 +36,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@react-spring/three": "^9.7.4",
+    "@react-three/drei": "^9.111.2",
+    "@react-three/fiber": "^8.17.5",
     "@vanilla-extract/css": "^1.15.3",
     "@vanilla-extract/dynamic": "^2.1.1",
     "axios": "^1.7.2",
@@ -43,7 +46,8 @@
     "jotai": "^2.8.4",
     "next": "14.2.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "three": "^0.167.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.0",
@@ -62,6 +66,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/three": "^0.167.2",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vanilla-extract/next-plugin": "^2.4.3",

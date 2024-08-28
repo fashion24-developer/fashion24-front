@@ -71,7 +71,7 @@ const cartMockHandler = [
       const fancy = FancyUnitData.find(fancy => fancy.id === cart.fancyId);
       return {
         ...cart,
-        fancy,
+        ...fancy,
       };
     });
 

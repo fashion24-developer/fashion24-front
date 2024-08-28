@@ -6,6 +6,16 @@ export interface CartItemType {
   count: number;
 }
 
-export type CartItemListType = {
-  fancy: FancyUnitType;
-} & CartItemType;
+export interface CartStateType {
+  state: boolean;
+  selectItem: Dispatch<SetStateAction<never[]>>;
+}
+
+export interface selectItemType {
+  cartId: number;
+  price: number;
+  count: number;
+}
+
+export type CartItemListType = FancyUnitType & CartItemType;
+export type CartItemPropType = FancyUnitType & CartItemType & CartStateType;

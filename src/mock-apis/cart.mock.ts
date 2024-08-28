@@ -1,4 +1,6 @@
+import { CartItemType } from '@/types/cart';
 import { http, HttpResponse } from 'msw';
+import { FancyUnitData } from './fancy.mock';
 type cartItemParamsType = {};
 type cartItemRequestBodyType = {
   fancyId: number;
@@ -7,7 +9,25 @@ type cartItemRequestBodyType = {
 
 const newCartItem = new Map();
 
-const cartMock = [
+const cartItemList: CartItemType[] = [
+  {
+    id: 1,
+    fancyId: 1,
+    count: 1,
+  },
+  {
+    id: 1,
+    fancyId: 2,
+    count: 2,
+  },
+  {
+    id: 3,
+    fancyId: 3,
+    count: 2,
+  },
+];
+
+const cartMockHandler = [
   http.post<cartItemParamsType, cartItemRequestBodyType>(
     '/api/cart',
     async ({ request, cookies }) => {
@@ -46,6 +66,19 @@ const cartMock = [
       });
     }
   ),
+  http.get('/api/cart/list', () => {
+    const cartList = cartItemList.map(cart => {
+      const fancy = FancyUnitData.find(fancy => fancy.id === cart.fancyId);
+      return {
+        ...cart,
+        fancy,
+      };
+    });
+
+    return HttpResponse.json(cartList, {
+      status: 200,
+    });
+  }),
 ];
 
-export default cartMock;
+export default cartMockHandler;

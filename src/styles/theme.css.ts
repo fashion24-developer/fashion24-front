@@ -2,14 +2,10 @@ import { createTheme, createThemeContract } from '@vanilla-extract/css';
 
 const palette = {
   BG_100: '#FFFFFF',
-  BG_75: '#FFFFFFBF',
-  BG_50: '#FFFFFF7F',
+  BRAND_MAIN_100: '#DD0505',
   TEXT_100: '#000000',
-  TEXT_75: '#000000BF',
-  TEXT_50: '#0000007F',
-  MAIN_100: '#FF772B',
-  MAIN_75: '#ff772bbf',
-  MAIN_50: '#ff772b7f',
+  BASIC_100: '#F2F2F2',
+  OPTION_100: '#A1A1A1',
 };
 
 const darkPalette = {
@@ -26,9 +22,11 @@ const darkPalette = {
 
 export const themeColor = createThemeContract({
   color: {
-    bg: null,
-    text: null,
-    main: null,
+    bg: '',
+    text: '',
+    basic: '',
+    option: '',
+    main: '',
   },
 });
 
@@ -36,7 +34,9 @@ export const lightThemeClass = createTheme(themeColor, {
   color: {
     bg: palette.BG_100,
     text: palette.TEXT_100,
-    main: palette.MAIN_100,
+    basic: palette.BASIC_100,
+    option: palette.OPTION_100,
+    main: palette.BRAND_MAIN_100,
   },
 });
 
@@ -45,5 +45,7 @@ export const darkThemeClass = createTheme(themeColor, {
     bg: darkPalette.BG_100,
     text: darkPalette.TEXT_100,
     main: darkPalette.MAIN_100,
+    basic: darkPalette.BG_100,
+    option: darkPalette.TEXT_100,
   },
 });

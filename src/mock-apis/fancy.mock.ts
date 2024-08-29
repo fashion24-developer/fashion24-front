@@ -750,12 +750,12 @@ export const FancyUnitData: FancyUnitType[] = [
         subOptions: [
           {
             id: 1,
-            name: 'red',
+            name: '#fa807e',
             price: 0,
           },
           {
             id: 2,
-            name: 'blue',
+            name: '#87cefa',
             price: 0,
           },
         ],

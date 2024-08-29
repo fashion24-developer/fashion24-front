@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import instance from './axiosInstance';
+import { instance } from './axiosInstance';
 import {
   FancyCategory,
   FancyListType,

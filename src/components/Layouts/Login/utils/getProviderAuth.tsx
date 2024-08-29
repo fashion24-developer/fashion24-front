@@ -13,7 +13,7 @@ const getPresetProviderAuth = (provider: string) => {
       <LoginButton
         image="/images/naver_login.png"
         provider="네이버"
-        redirect={`https://nid.naver.com/oauth2.0/authorize?client_id=4HSw4LWhdiHYfOXuCLVa&redirect_uri=http://localhost:3000/auth/naver/callback&response_type=code&state=test`}
+        redirect={`https://nid.naver.com/oauth2.0/authorize?client_id=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_NAVER_REDIRECT_URL}&response_type=code&state=test`}
       />
     ),
     google: (

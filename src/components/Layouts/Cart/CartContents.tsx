@@ -16,7 +16,6 @@ const CartContents = () => {
     const cartList = await CART.cartListApi();
     setCartItem(cartList);
   };
-  console.log(selectItem);
 
   const cartStateHandler = () => {
     setCartState(!cartState);

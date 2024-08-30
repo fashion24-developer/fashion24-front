@@ -1,4 +1,4 @@
-import { themeColor } from '@/styles/theme.css';
+import { themeColor } from '@/app/globalTheme.css';
 import { style } from '@vanilla-extract/css';
 
 export const button = style({

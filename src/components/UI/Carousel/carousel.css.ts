@@ -1,7 +1,7 @@
 // carousel.css.ts
 
 import { style, createVar } from '@vanilla-extract/css';
-import { themeColor } from '@/styles/theme.css';
+import { themeColor } from '@/app/globalTheme.css';
 
 export const CarouselItem = createVar();
 export const CarouselItemChild = createVar();
@@ -79,7 +79,7 @@ export const carouselItemTag = style({
   padding: '3px 8px',
   borderRadius: '12px',
   border: '1px solid #000',
-  backgroundColor: themeColor.color.main,
+  backgroundColor: themeColor.color.basic,
   color: themeColor.color.text,
 });
 

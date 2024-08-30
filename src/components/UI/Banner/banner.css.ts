@@ -1,11 +1,10 @@
-import theme from '@/styles/theme';
+import { themeColor } from '@/app/globalTheme.css';
 import { style } from '@vanilla-extract/css';
 
 export const banner = style({
   margin: '2% 5%',
   padding: '2% 15%',
-  height: '4em',
-  border: `2px solid ${theme.main.primary}`,
+  border: `2px solid ${themeColor.color.main}`,
   alignItems: 'center',
   display: 'flex',
   flexDirection: 'column',
@@ -13,7 +12,7 @@ export const banner = style({
 
 export const bannerChild1 = style({
   fontSize: '2em',
-  position: 'absolute',
+  position: 'relative',
   opacity: '0.2',
 });
 

@@ -13,13 +13,11 @@ interface PrintColorOptionsProps {
 
 interface SearchQueryType {
   selectColor: string;
-  name: string;
 }
 
 const PrintColorOptions = ({ selectedColors }: PrintColorOptionsProps) => {
   const initialQuery: SearchQueryType = {
     selectColor: '',
-    name: '',
   };
   const { searchQuery, queryHandler } = useSearchQuery<SearchQueryType>({
     query: initialQuery,

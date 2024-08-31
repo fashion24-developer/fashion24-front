@@ -1,5 +1,6 @@
 // fancy.css.ts
 
+import { themeColor } from '@/app/globalTheme.css';
 import {
   style,
   styleVariants,
@@ -136,9 +137,14 @@ export const resultContainer = style({
   marginTop: '25%',
 });
 
-export const priceBox = style({
+export const priceBoxContainer = style({
+  border: `1px solid ${themeColor.color.option}`,
   display: 'flex',
-  justifyContent: 'flex-end',
+});
+
+export const priceBox = style({
+  margin: 'auto 1em auto auto',
+  display: 'flex',
   fontSize: '2em',
 });
 

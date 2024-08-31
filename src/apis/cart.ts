@@ -8,6 +8,11 @@ const CART = {
     const result: AxiosResponse = await instance.get(`${CART.path}/list`);
     return result.data;
   },
+
+  async cartInApi(): Promise<any> {
+    const result: AxiosResponse = await instance.post(`${CART.path}`);
+    return result.data;
+  },
 };
 
 export default CART;

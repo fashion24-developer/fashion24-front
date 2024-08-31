@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Banner from './Banner';
-import { fn } from '@storybook/test';
 
 const meta = {
   title: 'components/Banner',

@@ -11,13 +11,15 @@ import * as global from '@/styles/global.css';
 import * as util from '@/styles/utils/globalStyleUtils';
 import * as style from '@/components/Layouts/Fancy/fancy.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
+import PrintColorOptions from './PrintColorOptions';
 
 interface FancyUnitImagesProps {
   images: FancyUnitImagesType['images'];
   options: FancyUnitBodyType['options'];
+  id: number;
 }
 
-const FancyUnitImages = ({ images, options }: FancyUnitImagesProps) => {
+const FancyUnitImages = ({ images, options, id }: FancyUnitImagesProps) => {
   const [preview, setPreview] = useState({
     image: images[0].url,
     order: 1,
@@ -38,32 +40,11 @@ const FancyUnitImages = ({ images, options }: FancyUnitImagesProps) => {
     });
   };
 
-  //color option을 보여주는 함수
-  const printColorOptions = () => {
-    if (selectedColors) {
-      return (
-        <>
-          {selectedColors.map(color => {
-            return (
-              <div
-                key={color.id}
-                style={assignInlineVars({ [style.colorOptionVar]: color.name })}
-                className={style.colorOption}
-              ></div>
-            );
-          })}
-        </>
-      );
-    }
-  };
-
   /**color배열을 받아오는 hook */
   useEffect(() => {
     const colorOption = options.find(option => option.name === 'color');
     setSelectedColors(colorOption?.subOptions);
   }, []);
-
-  console.log(selectedColors);
 
   return (
     <div
@@ -71,7 +52,11 @@ const FancyUnitImages = ({ images, options }: FancyUnitImagesProps) => {
       style={util.createGlobalDisplay({ displayVar: 'flex' })}
     >
       <div className={style.imagesListItemContainer}>
-        {printColorOptions()}
+        {selectedColors ? (
+          <PrintColorOptions selectedColors={selectedColors} />
+        ) : (
+          <></>
+        )}
         <>
           {images.map((item, idx) => {
             return (

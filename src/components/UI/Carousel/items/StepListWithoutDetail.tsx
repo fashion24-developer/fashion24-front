@@ -11,7 +11,7 @@ const StepListWithoutDetail = ({ data }: any) => {
     >
       <div
         className={styles.carouselItemImageWrapper}
-        style={assignInlineVars({ [styles.CarouselItemChild]: '200px' })}
+        style={assignInlineVars({ [styles.CarouselItemChild]: '80vh' })}
       >
         <Image src={data.image} alt="carousel" fill />
       </div>

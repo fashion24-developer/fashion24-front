@@ -19,3 +19,13 @@ export interface selectItemType {
 
 export type CartItemListType = FancyUnitType & CartItemType;
 export type CartItemPropType = FancyUnitType & CartItemType & CartStateType;
+
+export interface CartAddItemType {
+  fancyId: number;
+  count: number;
+  options: {
+    id: number;
+    name: string;
+    selectSubOption: string;
+  };
+}

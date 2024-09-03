@@ -1,9 +1,9 @@
-import Root from './root/page';
+import Intro from '@/app/_components/Intro/Intro';
 
 export default function Home() {
   return (
     <>
-      <Root />
+      <Intro />
     </>
   );
 }

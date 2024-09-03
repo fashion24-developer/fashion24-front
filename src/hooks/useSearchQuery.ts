@@ -26,7 +26,7 @@ const useSearchQuery = <T extends object>({ query }: SearchQueryType<T>) => {
     Object.keys(updatedQuery).forEach(key => {
       const value = updatedQuery[key as keyof T];
       if (key) {
-        params.set(key, value as unknown as string);
+        params.set(key, JSON.stringify(value));
       } else {
         params.append(key, value as unknown as string);
       }

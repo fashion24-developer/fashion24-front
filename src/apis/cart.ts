@@ -1,5 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { instance } from './axiosInstance';
+import { CartAddItemType } from '@/types/cart';
 
 const CART = {
   path: '/api/cart',
@@ -9,8 +10,10 @@ const CART = {
     return result.data;
   },
 
-  async cartInApi(): Promise<any> {
-    const result: AxiosResponse = await instance.post(`${CART.path}`);
+  async cartInApi(inData: CartAddItemType): Promise<any> {
+    const result: AxiosResponse = await instance.post(`${CART.path}`, {
+      ...inData,
+    });
     return result.data;
   },
 };

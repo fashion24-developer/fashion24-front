@@ -5,7 +5,7 @@ import * as path from 'path';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 
 const config: StorybookConfig = {
-  stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
@@ -23,11 +23,6 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  core: {
-    disableTelemetry: true, // 👈 Disables telemetry
-    enableCrashReports: true,
-  },
-
   webpackFinal: async (config: any) => {
     if (config.resolve) {
       config.resolve.plugins = config.resolve.plugins || [];

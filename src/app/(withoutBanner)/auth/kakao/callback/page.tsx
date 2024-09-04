@@ -1,5 +1,5 @@
 import OAuthCallbackPage from '@/app/(withoutBanner)/login/_components/Login/OauthCallback';
-import { ClientOnly } from '@/common/ClientOnly';
+import { ClientOnly } from '@/app/_components/common/ClientOnly';
 
 const NaverPage = () => {
   return (

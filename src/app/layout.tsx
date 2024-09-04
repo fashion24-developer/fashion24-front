@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import MSWProvider from '@/common/MswProvider';
-import JotaiProvider from '@/common/JotaiProvider';
+import MSWProvider from '@/app/_components/common/MswProvider';
+import JotaiProvider from '@/app/_components/common/JotaiProvider';
 import NavigateBar from './_components/nav/Navigate';
 
 export const metadata: Metadata = {

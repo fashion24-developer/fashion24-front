@@ -1,5 +1,5 @@
-import OAuthCallbackPage from '@/app/(withoutBanner)/login/_components/Login/OauthCallback';
 import { ClientOnly } from '@/app/_components/common/ClientOnly';
+import OAuthCallbackPage from '../../_components/OauthCallback';
 
 const GooglePage = () => {
   return (

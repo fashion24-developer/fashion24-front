@@ -6,24 +6,38 @@ import { useEffect, useState } from 'react';
 
 const OAuthCallbackPage = ({ provider }: { provider: string }) => {
   const [isToken, setIsToken] = useState(false);
+  const [token, setToken] = useState({
+    accessToken: '',
+    refreshToken: '',
+  });
   const router = useRouter();
-  const params = useSearchParams();
-  const code = params.get('code');
+  const code = useSearchParams().get('code');
 
   const authHandler = async () => {
-    await AUTH.authLogin(code as string, provider);
+    const response = await AUTH.authLogin(code as string, provider);
     setIsToken(true);
+    setToken(() => {
+      return {
+        accessToken: response.accessToken,
+        refreshToken: response.refreshToken,
+      };
+    });
   };
 
   useEffect(() => {
     authHandler();
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     if (isToken) {
       router.push('/');
     }
-  });
+    const authData = {
+      provider: provider,
+      token: token,
+    };
+    window.localStorage.setItem('auth', JSON.stringify(authData));
+  }, [isToken]);
 
   return <div>Loading</div>;
 };

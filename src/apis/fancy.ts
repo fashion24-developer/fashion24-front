@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { instance } from './axiosInstance';
+import { instance, mockInstance } from './axiosInstance';
 import {
   FancyCategory,
   FancyListType,
@@ -13,7 +13,9 @@ const FANCY = {
 
   //fancy페이지 옵션 리스트 불러오는 api
   async fancyOptionsListApi(): Promise<FancyCategory[]> {
-    const result: AxiosResponse = await instance.get(`${FANCY.path}/options`);
+    const result: AxiosResponse = await mockInstance.get(
+      `${FANCY.path}/options`
+    );
     return result.data;
   },
 
@@ -22,7 +24,7 @@ const FANCY = {
     page,
     pageSize,
   }: FancyPaginationParams): Promise<FancyPaginationType> {
-    const result: AxiosResponse = await instance.get(`${FANCY.path}`, {
+    const result: AxiosResponse = await mockInstance.get(`${FANCY.path}`, {
       params: {
         page: page,
         pageSize: pageSize,
@@ -33,7 +35,7 @@ const FANCY = {
 
   //fancy unit 불러오는 api
   async fancyUnitItemApi(id: number): Promise<FancyUnitType> {
-    const result: AxiosResponse = await instance.get(`${FANCY.path}/${id}`);
+    const result: AxiosResponse = await mockInstance.get(`${FANCY.path}/${id}`);
     return result.data;
   },
 };

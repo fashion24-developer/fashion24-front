@@ -32,11 +32,9 @@ const OAuthCallbackPage = ({ provider }: { provider: string }) => {
     if (isToken) {
       router.push('/');
     }
-    const authData = {
-      provider: provider,
-      token: token,
-    };
-    window.localStorage.setItem('auth', JSON.stringify(authData));
+    window.localStorage.setItem('provider', provider);
+    window.localStorage.setItem('refreshToken', token.refreshToken);
+    window.localStorage.setItem('accessToken', token.accessToken);
   }, [isToken]);
 
   return <div>Loading</div>;

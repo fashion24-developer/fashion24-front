@@ -3,31 +3,32 @@
 import * as styles from '../fancy.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { OptionsType } from '@/types/fancy';
-import useSearchQuery from '@/hooks/useSearchQuery';
+import { useSelectOption } from '@/hooks/useSelectOption';
 
 interface PrintColorOptionsProps {
-  selectedColors: OptionsType['subOptions'];
-}
-
-interface SearchQueryType {
-  selectColor: string;
+  selectedColors: OptionsType;
 }
 
 const PrintColorOptions = ({ selectedColors }: PrintColorOptionsProps) => {
-  const initialQuery: SearchQueryType = {
-    selectColor: '',
+  const { selectedOptionHandler } = useSelectOption();
+
+  const getSelectOption = (subOptionId: number, subOption: string) => {
+    selectedOptionHandler({
+      optionId: selectedColors.id,
+      name: selectedColors.name,
+      subOptionId: subOptionId,
+      selectOptionName: subOption,
+    });
   };
-  const { searchQuery, queryHandler } = useSearchQuery<SearchQueryType>({
-    query: initialQuery,
-  });
+
   if (selectedColors) {
     return (
       <>
-        {selectedColors.map(color => {
+        {selectedColors.subOptions.map(color => {
           return (
             <div>
               <div
-                onClick={() => queryHandler('selectColor', color.name)}
+                onClick={() => getSelectOption(color.id, color.name)}
                 key={color.id}
                 style={assignInlineVars({
                   [styles.colorOptionVar]: color.name,

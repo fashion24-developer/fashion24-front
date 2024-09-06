@@ -24,8 +24,7 @@ const FancyUnitImages = ({ images, options, id }: FancyUnitImagesProps) => {
     image: images[0].url,
     order: 1,
   });
-  const [selectedColors, setSelectedColors] =
-    useState<OptionsType['subOptions']>();
+  const [selectedColors, setSelectedColors] = useState<OptionsType>();
 
   /**이미지 preview 띄우는 핸들러 */
   const imagePreviewHandler = (order: number) => {
@@ -43,7 +42,7 @@ const FancyUnitImages = ({ images, options, id }: FancyUnitImagesProps) => {
   /**color배열을 받아오는 hook */
   useEffect(() => {
     const colorOption = options.find(option => option.name === 'color');
-    setSelectedColors(colorOption?.subOptions);
+    setSelectedColors(colorOption);
   }, []);
 
   return (
@@ -54,9 +53,7 @@ const FancyUnitImages = ({ images, options, id }: FancyUnitImagesProps) => {
       <div className={styles.imagesListItemContainer}>
         {selectedColors ? (
           <PrintColorOptions selectedColors={selectedColors} />
-        ) : (
-          <></>
-        )}
+        ) : null}
         <>
           {images.map((item, idx) => {
             return (

@@ -24,8 +24,7 @@ export interface CartAddItemType {
   fancyId: number;
   count: number;
   options: {
-    id: number;
-    name: string;
-    selectSubOption: string;
-  };
+    optionId: number;
+    subOptionId: number;
+  }[];
 }

@@ -13,20 +13,18 @@ import { cartAtom } from '@/jotai/atoms/cartAtom';
 const FancyBodyResult = (props: FancyUnitBodyType) => {
   const [count, setCount] = useState(1);
   const option = useAtomValue(cartAtom);
-  const pathname = usePathname();
-  const params = useSearchParams();
 
   const cartHandler = async () => {
-    const fancyId = Number(pathname[pathname.length - 1]);
-    const option = props.name;
+    const optionReq = option.options.map(item => {
+      return {
+        optionId: item.optionId,
+        subOptionId: item.subOptionId,
+      };
+    });
     const response = await CART.cartInApi({
-      fancyId: 23124,
-      count: 3,
-      options: {
-        id: 12141,
-        name: '선택한 옵션',
-        selectSubOption: '선택한 소옵션',
-      },
+      fancyId: option.fancyId,
+      count: count,
+      options: optionReq,
     });
   };
 

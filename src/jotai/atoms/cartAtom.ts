@@ -1,5 +1,16 @@
 import { atom } from 'jotai';
 
-export const cartAtom = atom<
-  { id: number; name: string; selectSubOption: string }[]
->([]);
+interface CartAtomType {
+  fancyId: number;
+  options: {
+    optionId: number;
+    name: string;
+    subOptionId: number;
+    selectSubOption: string;
+  }[];
+}
+
+export const cartAtom = atom<CartAtomType>({
+  fancyId: 0,
+  options: [],
+});

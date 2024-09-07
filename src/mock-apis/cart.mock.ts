@@ -5,9 +5,9 @@ type cartItemParamsType = {};
 type cartItemRequestBodyType = {
   fancyId: number;
   options: {
-    name: string;
-    selectSubOption: string;
-  };
+    optionId: number;
+    subOptionId: number;
+  }[];
   count: number;
 };
 
@@ -33,16 +33,16 @@ const cartMockHandler = [
   http.post<cartItemParamsType, cartItemRequestBodyType>(
     '/api/cart',
     async ({ request }) => {
-      const cartItem = await request.json();
+      const { count, fancyId, options } = await request.json();
 
-      if (!cartItem) {
+      if (!count || !fancyId || !options) {
         return new HttpResponse(null, {
           status: 403,
           statusText: 'item data not found',
         });
       }
 
-      return HttpResponse.json(cartItem, {
+      return HttpResponse.json(null, {
         status: 201,
       });
     }

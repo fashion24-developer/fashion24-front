@@ -5,7 +5,7 @@ import * as styles from './cart.css';
 export default function ShoppingPage() {
   return (
     <>
-      <div className={styles.pageTitle}></div>
+      <div className={styles.pageTitle}>장바구니</div>
       <div className={styles.selectBar}>
         <div className={styles.checkBox}>
           <CheckBox />

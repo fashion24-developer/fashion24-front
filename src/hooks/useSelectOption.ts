@@ -5,7 +5,7 @@ interface useSelectOptionType {
   optionId: number;
   name: string;
   subOptionId: number;
-  selectOptionName: string;
+  selectSubOption: string;
 }
 
 //옵션 선택시 사용하는 hook
@@ -16,7 +16,7 @@ export function useSelectOption() {
     optionId,
     name,
     subOptionId,
-    selectOptionName,
+    selectSubOption,
   }: useSelectOptionType) => {
     const existingOptionIndex = selectOption.options.findIndex(
       option => option.optionId === optionId
@@ -32,10 +32,10 @@ export function useSelectOption() {
         setSelectOption(prev => {
           const newOptions = [...prev.options];
           newOptions[existingOptionIndex] = {
-            optionId: optionId,
-            name: name,
-            subOptionId: subOptionId,
-            selectSubOption: selectOptionName,
+            optionId,
+            name,
+            subOptionId,
+            selectSubOption,
           };
           return {
             ...prev,
@@ -51,10 +51,10 @@ export function useSelectOption() {
           options: [
             ...prev.options,
             {
-              optionId: optionId,
-              name: name,
-              subOptionId: subOptionId,
-              selectSubOption: selectOptionName,
+              optionId,
+              name,
+              subOptionId,
+              selectSubOption,
             },
           ],
         };

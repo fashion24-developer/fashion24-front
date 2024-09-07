@@ -15,7 +15,7 @@ const FancyOptionsBox = (option: OptionsType) => {
       optionId: option.id,
       name: option.name,
       subOptionId: subOptionId,
-      selectOptionName: subOption,
+      selectSubOption: subOption,
     });
     setOpacityItem(subOption);
   };

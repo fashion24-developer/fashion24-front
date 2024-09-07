@@ -17,7 +17,7 @@ const PrintColorOptions = ({ selectedColors }: PrintColorOptionsProps) => {
       optionId: selectedColors.id,
       name: selectedColors.name,
       subOptionId: subOptionId,
-      selectOptionName: subOption,
+      selectSubOption: subOption,
     });
   };
 

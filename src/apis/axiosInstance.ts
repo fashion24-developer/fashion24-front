@@ -9,6 +9,14 @@ const mockInstance = axios.create({
   },
 });
 
+const mockAuthInstance = axios.create({
+  baseURL: `${process.env.NEXT_PUBLIC_MOCK_URL}`,
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  },
+});
+
 //로그인이 필요없는 인스턴스
 const instance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_BASE_URL}`,
@@ -35,5 +43,6 @@ const authInstance = axios.create({
 //then 또는 catch로 인터셉터를 동작시킬 수 있음
 // 요청 인터셉터 추가하기
 authInstance.interceptors.request.use(getAuthToken, getAuthError);
+mockAuthInstance.interceptors.request.use(getAuthToken, getAuthError);
 
-export { instance, authInstance, mockInstance };
+export { instance, authInstance, mockInstance, mockAuthInstance };

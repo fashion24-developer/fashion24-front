@@ -1,6 +1,5 @@
 import { themeColor } from '@/app/globalTheme.css';
 import { globalStyle, style } from '@vanilla-extract/css';
-import { ECDH } from 'crypto';
 
 export const pageTitle = style({
   fontSize: '2.5em',
@@ -58,6 +57,10 @@ export const checkBoxInput = style({
 export const unCheckedAll = style({
   alignContent: 'center',
   marginRight: '3%',
+  cursor: 'pointer',
+  ':hover': {
+    color: '#ff0000',
+  },
 });
 
 export const cartListContainer = style({
@@ -167,4 +170,58 @@ export const itemPrice = style({
   marginRight: 10,
   textAlign: 'end',
   alignContent: 'end',
+});
+
+//PaymentStatus css
+export const paymentContainer = style({
+  margin: '0 10%',
+});
+
+export const paymentTitle = style({
+  paddingLeft: 20,
+  marginTop: '8%',
+  fontSize: '1.5em',
+});
+
+export const paymentPrice = style({
+  height: 50,
+  margin: '1% 0',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  fontSize: '1.2em',
+});
+
+export const couponBox = style({
+  height: 50,
+  margin: '1% 0',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  fontSize: '1.2em',
+});
+
+export const paymentFontColor = style({
+  color: '#A1A1A1',
+});
+
+export const paymentSubmitContainer = style({
+  margin: '0 10%',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'flex-end',
+});
+
+export const paymentSubmit = style({
+  fontWeight: 'bold',
+  cursor: 'pointer',
+  color: '#ffffff',
+  alignContent: 'center',
+  textAlign: 'center',
+  width: 130,
+  height: 50,
+  borderRadius: 10,
+  backgroundColor: '#ff0000',
 });

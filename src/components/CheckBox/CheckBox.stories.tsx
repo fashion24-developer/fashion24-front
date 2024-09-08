@@ -8,6 +8,9 @@ const meta = {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
+  args: {
+    all: false,
+  },
   tags: ['autodocs'],
 } satisfies Meta<typeof CheckBox>;
 

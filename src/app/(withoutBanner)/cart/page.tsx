@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { CartItemType } from '@/types/cart';
 import CART from '@/apis/cart';
 import PaymentStatus from './_components/PaymentStatus';
+import CartListItem from './_components/CartListItem';
 
 export default function ShoppingPage() {
   const [getCartList, setCartList] = useState<CartItemType[]>([]);
@@ -34,9 +35,7 @@ export default function ShoppingPage() {
         <div className={styles.unCheckedAll}>전체삭제</div>
       </div>
       <div className={styles.cartListContainer}>
-        {getCartList.map(item => {
-          return <CartItem key={item.id} {...item} />;
-        })}
+        <CartListItem cartList={getCartList} />
       </div>
       <PaymentStatus />
     </>

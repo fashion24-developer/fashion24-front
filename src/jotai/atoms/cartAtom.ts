@@ -10,7 +10,19 @@ interface CartAtomType {
   }[];
 }
 
+interface paymentPriceType {
+  state: {
+    id: number;
+  }[];
+  price: number;
+}
+
 export const cartAtom = atom<CartAtomType>({
   fancyId: 0,
   options: [],
+});
+
+export const paymentPrice = atom<paymentPriceType>({
+  state: [],
+  price: 0,
 });

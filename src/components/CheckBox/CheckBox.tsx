@@ -1,26 +1,52 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import * as styles from './checkBox.css';
 import { useAtom } from 'jotai';
 import { checkBoxAtom } from '@/jotai/atoms/uiAtom';
+import { CheckStateType } from '@/app/(withoutBanner)/cart/_components/CartItem';
 
-export default function CheckBox(all: { all: boolean }) {
-  const [check, setCheck] = useAtom(checkBoxAtom);
+interface CheckBoxProps<T> {
+  all: boolean;
+  index?: number;
+  setCheckState?: Dispatch<SetStateAction<T>>;
+}
+
+//나중에 index가 아니라 넘어오는 id값으로 변경 가능성 있음
+export default function CheckBox<T extends CheckStateType>({
+  all,
+  index,
+  setCheckState,
+}: CheckBoxProps<T>) {
+  const [allCheck, setAllCheck] = useAtom(checkBoxAtom);
   const [eachCheck, setEachCheck] = useState(false);
 
-  //나중에 util로 분리
+  useEffect(() => {
+    setEachCheck(allCheck);
+  }, [allCheck]);
+
+  useEffect(() => {
+    if (setCheckState) {
+      setCheckState(prev => {
+        return {
+          ...prev,
+          state: eachCheck,
+        };
+      });
+    }
+  }, [eachCheck]);
+
   if (all) {
     return (
       <div className={styles.checkBoxContainer}>
         <input
-          onClick={() => setCheck(!check)}
+          onClick={() => setAllCheck(!allCheck)}
           type="checkbox"
-          id="check1"
-          checked={check}
+          id="checkAll"
+          checked={allCheck}
           className={styles.hiddenCheckbox}
         />
-        <label htmlFor="check1" className={styles.checkboxLabel}></label>
+        <label htmlFor="checkAll" className={styles.checkboxLabel}></label>
       </div>
     );
   }
@@ -30,11 +56,11 @@ export default function CheckBox(all: { all: boolean }) {
       <input
         onClick={() => setEachCheck(!eachCheck)}
         type="checkbox"
-        id="check1"
+        id={`check${index}`}
         checked={eachCheck}
         className={styles.hiddenCheckbox}
       />
-      <label htmlFor="check1" className={styles.checkboxLabel}></label>
+      <label htmlFor={`check${index}`} className={styles.checkboxLabel}></label>
     </div>
   );
 }

@@ -18,6 +18,13 @@ const CART = {
     });
     return result.data;
   },
+
+  async deleteCartItemApi(itemId: number): Promise<any> {
+    const result: AxiosResponse = await mockAuthInstance.delete(
+      `${CART.path}/${itemId}`
+    );
+    return result.data;
+  },
 };
 
 export default CART;

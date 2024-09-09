@@ -196,6 +196,24 @@ const cartMockHandler = [
       status: 200,
     });
   }),
+
+  http.delete('/api/cart/:itemId', async ({ params }) => {
+    const itemId = Number(params.itemId);
+
+    const filterItem = cartItemList.filter(item => {
+      return item.id !== itemId;
+    });
+
+    if (!itemId) {
+      return HttpResponse.json(null, {
+        status: 403,
+      });
+    }
+
+    return HttpResponse.json(filterItem, {
+      status: 200,
+    });
+  }),
 ];
 
 export default cartMockHandler;

@@ -8,6 +8,7 @@ import { CartItemType } from '@/types/cart';
 import CART from '@/apis/cart';
 import PaymentStatus from './_components/PaymentStatus';
 import CartListItem from './_components/CartListItem';
+import CartListAllDelete from './_components/CartListAllDelete';
 
 export default function ShoppingPage() {
   const [getCartList, setCartList] = useState<CartItemType[]>([]);
@@ -32,7 +33,7 @@ export default function ShoppingPage() {
             전체 {getCartList.length}개
           </div>
         </div>
-        <div className={styles.unCheckedAll}>전체삭제</div>
+        <CartListAllDelete />
       </div>
       <div className={styles.cartListContainer}>
         <CartListItem cartList={getCartList} />

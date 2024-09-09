@@ -26,3 +26,5 @@ export const paymentPrice = atom<paymentPriceType>({
   state: [],
   price: 0,
 });
+
+export const cartListAllState = atom<boolean>(false);

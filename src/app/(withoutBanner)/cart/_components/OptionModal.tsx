@@ -9,7 +9,6 @@ export default function OptionModal() {
   const router = useRouter();
   const params = useSearchParams();
   const item = JSON.parse(params.get('item') as string);
-  console.log(item);
 
   //아마 api로 불러와야 할 듯 cache기능 구현해서 성능 up
   return (

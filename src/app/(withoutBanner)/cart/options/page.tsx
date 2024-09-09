@@ -1,9 +1,12 @@
+import { Suspense } from 'react';
 import OptionModal from '../_components/OptionModal';
 
-export default function CartOptionModal() {
+export default function CartOptionModalPage() {
   return (
     <>
-      <OptionModal />
+      <Suspense>
+        <OptionModal />
+      </Suspense>
     </>
   );
 }

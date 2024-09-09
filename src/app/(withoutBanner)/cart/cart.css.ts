@@ -87,7 +87,6 @@ export const checkBoxContainer = style({
 });
 
 export const itemImage = style({
-  width: 150,
   backgroundColor: '#777277',
   margin: 10,
 });

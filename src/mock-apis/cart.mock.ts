@@ -25,7 +25,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 1000,
     price: 1200,
     discountRate: 10,
-    image: 'image1.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 2,
@@ -40,7 +40,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 2000,
     price: 2200,
     discountRate: 5,
-    image: 'image2.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 3,
@@ -55,7 +55,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 3000,
     price: 3300,
     discountRate: 15,
-    image: 'image3.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 4,
@@ -70,7 +70,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 4000,
     price: 4400,
     discountRate: 20,
-    image: 'image4.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 5,
@@ -85,7 +85,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 5000,
     price: 5500,
     discountRate: 25,
-    image: 'image5.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 6,
@@ -100,7 +100,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 6000,
     price: 6600,
     discountRate: 30,
-    image: 'image6.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 7,
@@ -115,7 +115,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 7000,
     price: 7700,
     discountRate: 35,
-    image: 'image7.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 8,
@@ -130,7 +130,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 8000,
     price: 8800,
     discountRate: 40,
-    image: 'image8.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 9,
@@ -145,7 +145,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 9000,
     price: 9900,
     discountRate: 45,
-    image: 'image9.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
   {
     fancyId: 10,
@@ -160,7 +160,7 @@ const cartItemList: CartItemType[] = [
     costPrice: 10000,
     price: 11000,
     discountRate: 50,
-    image: 'image10.jpg',
+    image: 'https://cdn.pixabay.com/photo/2020/03/24/01/01/cat-4962437_640.jpg',
   },
 ];
 
@@ -193,6 +193,24 @@ const cartMockHandler = [
     }
 
     return HttpResponse.json(cartItemList, {
+      status: 200,
+    });
+  }),
+
+  http.delete('/api/cart/:itemId', async ({ params }) => {
+    const itemId = Number(params.itemId);
+
+    const filterItem = cartItemList.filter(item => {
+      return item.id !== itemId;
+    });
+
+    if (!itemId) {
+      return HttpResponse.json(null, {
+        status: 403,
+      });
+    }
+
+    return HttpResponse.json(filterItem, {
       status: 200,
     });
   }),

@@ -1,9 +1,14 @@
+'use client';
+
 import CheckBox from '@/components/CheckBox/CheckBox';
 import * as styles from '../cart.css';
 import { CartItemType } from '@/types/cart';
 import { useEffect, useState } from 'react';
 import { useSetAtom } from 'jotai';
 import { paymentPrice } from '@/jotai/atoms/cartAtom';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 interface CarItemProps {
   item: CartItemType;
@@ -17,6 +22,7 @@ export interface CheckStateType {
 }
 
 export default function CartItem({ item, index, deleteHandler }: CarItemProps) {
+  const router = useRouter();
   const setTotalPrice = useSetAtom(paymentPrice);
   const [check, setCheck] = useState<CheckStateType>({
     id: item.id,
@@ -50,7 +56,13 @@ export default function CartItem({ item, index, deleteHandler }: CarItemProps) {
       <div className={styles.checkBoxContainer}>
         <CheckBox all={false} index={index} setCheckState={setCheck} />
       </div>
-      <div className={styles.itemImage}>{item.image}</div>
+      <Image
+        src={item.image}
+        width={150}
+        height={180}
+        alt="itemImage"
+        className={styles.itemImage}
+      ></Image>
       <div className={styles.itemContentContainer}>
         <div className={styles.itemHeaderContainer}>
           <div className={styles.itemTitle}>{item.name}</div>
@@ -66,7 +78,15 @@ export default function CartItem({ item, index, deleteHandler }: CarItemProps) {
             );
           })}
         </div>
-        <div className={styles.optionChangeButton}>옵션/수량 변경</div>
+        <Link
+          href={{
+            pathname: '/cart/options',
+            query: { item: JSON.stringify(item) },
+          }}
+          scroll={false}
+        >
+          <div className={styles.optionChangeButton}>옵션/수량 변경</div>
+        </Link>
       </div>
       <div className={styles.contentEnd}>
         <div className={styles.itemClose}>

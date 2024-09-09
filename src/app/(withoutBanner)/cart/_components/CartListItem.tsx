@@ -29,7 +29,6 @@ export default function CartListItem({
       setFilterCartList([]);
       setDeleteState(false);
     }
-    console.log('!23123');
   }, [deleteState]);
 
   return (

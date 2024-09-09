@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react';
 import { useSetAtom } from 'jotai';
 import { paymentPrice } from '@/jotai/atoms/cartAtom';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 interface CarItemProps {
@@ -22,7 +21,6 @@ export interface CheckStateType {
 }
 
 export default function CartItem({ item, index, deleteHandler }: CarItemProps) {
-  const router = useRouter();
   const setTotalPrice = useSetAtom(paymentPrice);
   const [check, setCheck] = useState<CheckStateType>({
     id: item.id,

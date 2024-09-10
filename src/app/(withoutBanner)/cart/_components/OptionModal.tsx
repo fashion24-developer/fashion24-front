@@ -4,13 +4,28 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import * as styles from '../@modal/(.)options/optionModal.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import OptionComboBox from './OptionComboBox';
+import { useEffect, useState } from 'react';
+import FANCY from '@/apis/fancy';
+import { FancyUnitType } from '@/types/fancy';
 
 export default function OptionModal() {
   const router = useRouter();
   const params = useSearchParams();
   const item = JSON.parse(params.get('item') as string);
 
-  //아마 api로 불러와야 할 듯 cache기능 구현해서 성능 up
+  const [getFancyData, setFancyData] = useState<FancyUnitType>();
+  const [pickColor, setPickColor] = useState('');
+
+  //fancy아이디에 따른 값 불러오는 api(cache기능 구현해서 성능향상)
+  const getFancyUnitApi = async () => {
+    const response = await FANCY.fancyUnitItemApi(item.fancyId);
+    setFancyData(response);
+  };
+
+  useEffect(() => {
+    getFancyUnitApi();
+  }, [router]);
+
   return (
     <>
       <div onClick={() => router.back()} className={styles.background}></div>
@@ -21,21 +36,29 @@ export default function OptionModal() {
           <div>{item.category}</div>
         </div>
         <div className={styles.colorWrapper}>
-          <div
-            style={assignInlineVars({ [styles.colorVar]: '#f00ff0' })}
-            className={styles.color}
-          ></div>
-          <div
-            style={assignInlineVars({ [styles.colorVar]: '#ffff00' })}
-            className={styles.color}
-          ></div>
-          <div
-            style={assignInlineVars({ [styles.colorVar]: '#ff0f00' })}
-            className={styles.color}
-          ></div>
+          {getFancyData?.options.map(option => {
+            if (option.name === 'color') {
+              return (
+                <>
+                  {option.subOptions.map(sub => {
+                    return (
+                      <div
+                        style={assignInlineVars({
+                          [styles.colorVar]: `${sub.name}`,
+                        })}
+                        className={styles.color}
+                      ></div>
+                    );
+                  })}
+                </>
+              );
+            }
+          })}
         </div>
         <div className={styles.comboBoxWrapper}>
-          <OptionComboBox />
+          {getFancyData?.options.map(option => {
+            return <OptionComboBox select={item.options} option={option} />;
+          })}
         </div>
       </div>
     </>

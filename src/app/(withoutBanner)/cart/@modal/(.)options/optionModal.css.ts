@@ -51,6 +51,7 @@ export const color = style({
   borderRadius: '50%',
   backgroundColor: colorVar,
   margin: 5,
+  cursor: 'pointer',
 });
 
 //option comboBox
@@ -59,6 +60,7 @@ export const comboBoxWrapper = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  marginTop: 20,
 });
 
 globalStyle('ul', {
@@ -75,6 +77,7 @@ export const comboBoxContainer = style({
   position: 'relative',
   display: 'inline-block',
   width: '80%',
+  margin: 3,
 });
 
 export const comboBoxButton = style({
@@ -108,4 +111,13 @@ export const comboBoxItem = style({
   ':hover': {
     backgroundColor: '#f0f0f0',
   },
+});
+
+export const backgroundDropdown = style({
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  zIndex: 1,
 });

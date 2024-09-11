@@ -11,14 +11,14 @@ type cartItemRequestBodyType = {
   count: number;
 };
 
-const cartItemList: CartItemType[] = [
+const cartItemList = [
   {
     fancyId: 1,
     id: 1,
     name: 'Item 1',
     category: 'Category 1',
     options: [
-      { id: 1, name: 'Option 1', selectSubName: 'SubOption 1' },
+      { id: 1, name: 'color', selectSubName: '#4a8fcb' },
       { id: 2, name: 'Option 2', selectSubName: 'SubOption 2' },
     ],
     count: 1,
@@ -33,7 +33,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 2',
     category: 'Category 2',
     options: [
-      { id: 3, name: 'Option 3', selectSubName: 'SubOption 3' },
+      { id: 3, name: 'color', selectSubName: '#d45774' },
       { id: 4, name: 'Option 4', selectSubName: 'SubOption 4' },
     ],
     count: 2,
@@ -48,7 +48,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 3',
     category: 'Category 3',
     options: [
-      { id: 5, name: 'Option 5', selectSubName: 'SubOption 5' },
+      { id: 5, name: 'color', selectSubName: '#8d3c9f' },
       { id: 6, name: 'Option 6', selectSubName: 'SubOption 6' },
     ],
     count: 3,
@@ -63,7 +63,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 4',
     category: 'Category 4',
     options: [
-      { id: 7, name: 'Option 7', selectSubName: 'SubOption 7' },
+      { id: 7, name: 'color', selectSubName: '#b87b3e' },
       { id: 8, name: 'Option 8', selectSubName: 'SubOption 8' },
     ],
     count: 4,
@@ -78,7 +78,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 5',
     category: 'Category 5',
     options: [
-      { id: 9, name: 'Option 9', selectSubName: 'SubOption 9' },
+      { id: 9, name: 'color', selectSubName: '#3e8f5a' },
       { id: 10, name: 'Option 10', selectSubName: 'SubOption 10' },
     ],
     count: 5,
@@ -93,7 +93,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 6',
     category: 'Category 6',
     options: [
-      { id: 11, name: 'Option 11', selectSubName: 'SubOption 11' },
+      { id: 11, name: 'color', selectSubName: '#e0b72f' },
       { id: 12, name: 'Option 12', selectSubName: 'SubOption 12' },
     ],
     count: 6,
@@ -108,7 +108,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 7',
     category: 'Category 7',
     options: [
-      { id: 13, name: 'Option 13', selectSubName: 'SubOption 13' },
+      { id: 13, name: 'color', selectSubName: '#6d9eb1' },
       { id: 14, name: 'Option 14', selectSubName: 'SubOption 14' },
     ],
     count: 7,
@@ -123,7 +123,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 8',
     category: 'Category 8',
     options: [
-      { id: 15, name: 'Option 15', selectSubName: 'SubOption 15' },
+      { id: 15, name: 'color', selectSubName: '#fa9b6f' },
       { id: 16, name: 'Option 16', selectSubName: 'SubOption 16' },
     ],
     count: 8,
@@ -138,7 +138,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 9',
     category: 'Category 9',
     options: [
-      { id: 17, name: 'Option 17', selectSubName: 'SubOption 17' },
+      { id: 17, name: 'color', selectSubName: '#d94c69' },
       { id: 18, name: 'Option 18', selectSubName: 'SubOption 18' },
     ],
     count: 9,
@@ -153,7 +153,7 @@ const cartItemList: CartItemType[] = [
     name: 'Item 10',
     category: 'Category 10',
     options: [
-      { id: 19, name: 'Option 19', selectSubName: 'SubOption 19' },
+      { id: 19, name: 'color', selectSubName: '#8a6d7d' },
       { id: 20, name: 'Option 20', selectSubName: 'SubOption 20' },
     ],
     count: 10,

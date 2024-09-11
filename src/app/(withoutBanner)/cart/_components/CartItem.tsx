@@ -76,15 +76,17 @@ export default function CartItem({ item, index, deleteHandler }: CarItemProps) {
             );
           })}
         </div>
-        <Link
-          href={{
-            pathname: '/cart/options',
-            query: { item: JSON.stringify(item) },
-          }}
-          scroll={false}
-        >
-          <div className={styles.optionChangeButton}>옵션/수량 변경</div>
-        </Link>
+        <div className={styles.optionChangeButton}>
+          <Link
+            href={{
+              pathname: '/cart/options',
+              query: { item: JSON.stringify(item) },
+            }}
+            scroll={false}
+          >
+            <div>옵션/수량 변경</div>
+          </Link>
+        </div>
       </div>
       <div className={styles.contentEnd}>
         <div className={styles.itemClose}>

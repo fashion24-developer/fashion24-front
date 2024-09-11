@@ -10,6 +10,7 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    src: { control: 'text' },
     backGround: { control: 'text' },
     description: { control: 'text' },
   },
@@ -21,6 +22,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Fancy: Story = {
   args: {
+    src: '/fancy',
     backGround:
       'https://github.com/user-attachments/assets/539b22a8-1da8-4bb0-b865-a8b45f75e5d9',
     description: 'Office Core',
@@ -29,6 +31,7 @@ export const Fancy: Story = {
 
 export const Whatever: Story = {
   args: {
+    src: '/whatever',
     backGround:
       'https://github.com/user-attachments/assets/d43988a0-bbdd-40bf-bd36-9ade1bd9a101',
     description: 'Please select the item you want',

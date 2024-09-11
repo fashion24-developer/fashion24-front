@@ -28,15 +28,20 @@ export const content = style({
   width: '100%',
 });
 
-export const button = style({
-  display: 'flex',
-  flexDirection: 'column',
+export const hamburgerContainer = style({
   position: 'fixed',
   top: 10,
   bottom: 0,
   right: 10,
   zIndex: 100,
+});
+
+export const hamburgerWrapper = style({
   cursor: 'pointer',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
 });
 
 export const closeButton = style({

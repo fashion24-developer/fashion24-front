@@ -42,10 +42,15 @@ export default function NavigateBar() {
   return (
     <>
       {!isOpen ? (
-        <div className={styles.button} onClick={() => setIsOpen(true)}>
-          <span className={styles.hamburger} />
-          <span className={styles.hamburger} />
-          <span className={styles.hamburger} />
+        <div className={styles.hamburgerContainer}>
+          <div
+            onClick={() => setIsOpen(true)}
+            className={styles.hamburgerWrapper}
+          >
+            <span className={styles.hamburger} />
+            <span className={styles.hamburger} />
+            <span className={styles.hamburger} />
+          </div>
         </div>
       ) : (
         <div onClick={closeSide} className={styles.background}></div>

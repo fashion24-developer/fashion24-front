@@ -5,9 +5,12 @@ export const banner = style({
   margin: '2% 5%',
   padding: '2% 15%',
   border: `2px solid ${themeColor.color.main}`,
-  alignItems: 'center',
+});
+
+export const bannerLink = style({
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
 });
 
 export const bannerChild1 = style({

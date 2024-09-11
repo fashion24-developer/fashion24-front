@@ -9,7 +9,11 @@ export default function FancyLayout({
   return (
     <div>
       <Header src="/images/intro_logo.png" />
-      <Banner backGround="/images/intro_fancy.png" description="Office Core" />
+      <Banner
+        src="/fancy"
+        backGround="/images/intro_fancy.png"
+        description="Office Core"
+      />
       {children}
     </div>
   );

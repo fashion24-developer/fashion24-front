@@ -10,6 +10,7 @@ export default function AbleBanner({
     <html lang="en">
       <Header src="/images/intro_logo.png" />
       <Banner
+        src="/whatever"
         backGround="/images/intro_whatever.png"
         description="lease select the item you want"
       />

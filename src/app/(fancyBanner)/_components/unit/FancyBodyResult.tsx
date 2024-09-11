@@ -6,26 +6,35 @@ import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useState } from 'react';
 import CountBox from '@/components/CountBox/CountBox';
 import CART from '@/apis/cart';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useAtomValue } from 'jotai';
 import { cartAtom } from '@/jotai/atoms/cartAtom';
 
 const FancyBodyResult = (props: FancyUnitBodyType) => {
   const [count, setCount] = useState(1);
   const option = useAtomValue(cartAtom);
+  const router = useRouter();
 
   const cartHandler = async () => {
-    const optionReq = option.options.map(item => {
-      return {
-        optionId: item.optionId,
-        subOptionId: item.subOptionId,
-      };
-    });
-    const response = await CART.cartInApi({
-      fancyId: option.fancyId,
-      count: count,
-      options: optionReq,
-    });
+    if (props.options.length === option.options.length) {
+      const optionReq = option.options.map(item => {
+        return {
+          optionId: item.optionId,
+          subOptionId: item.subOptionId,
+        };
+      });
+      const response = await CART.cartInApi({
+        fancyId: option.fancyId,
+        count: count,
+        options: optionReq,
+      });
+      if (response && confirm('장바구니에 담았습니다. 이동하시겠습니까?')) {
+        router.replace('/cart');
+      }
+    } else {
+      //alert은 나중에 모달로 모두 대체
+      alert('옵셥을 선택해 주세요.');
+    }
   };
 
   return (

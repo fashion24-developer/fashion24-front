@@ -5,7 +5,7 @@ import NavigateBar from './_components/nav/Navigate';
 import localFont from 'next/font/local';
 
 const myFont = localFont({
-  src: './fonts/SEBANG-Gothic.ttf',
+  src: './fonts/Analogist.ttf',
   display: 'swap',
 });
 

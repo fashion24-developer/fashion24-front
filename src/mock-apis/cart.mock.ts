@@ -170,14 +170,14 @@ const cartMockHandler = [
     async ({ request }) => {
       const { count, fancyId, options } = await request.json();
 
-      if (!count || !fancyId || !options) {
+      if (!options) {
         return new HttpResponse(null, {
           status: 403,
           statusText: 'item data not found',
         });
       }
 
-      return HttpResponse.json(null, {
+      return HttpResponse.json('success', {
         status: 201,
       });
     }

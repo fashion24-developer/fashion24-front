@@ -66,7 +66,6 @@ export const hamburger = style({
 globalStyle('li', {
   listStyle: 'none',
   padding: '10px 0',
-  borderBottom: '1px solid #f0f0f0',
 });
 
 globalStyle('a', {

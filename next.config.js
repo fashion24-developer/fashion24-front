@@ -3,20 +3,6 @@ const withVanillaExtract = createVanillaExtractPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async headers() {
-    return [
-      {
-        source: '/login',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value:
-              "default-src 'self' 'unsafe-eval' 'unsafe-inline' https:; img-src 'self' data: blob: https:; font-src 'self' data: https:;",
-          },
-        ],
-      },
-    ];
-  },
   webpack: (config, { isServer }) => {
     if (isServer) {
       if (Array.isArray(config.resolve.alias))

@@ -27,7 +27,7 @@ const getPresetProviderAuth = (provider: string) => {
     //   <LoginButton
     //     image="/images/naver_login.png"
     //     provider="네이버 mock 테스트"
-    //     redirect={`/auth/naver/callback?code=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhY2Nlc3NUb2tlbiIsInVzZXJJZCI6MSwidXNlclJvbGUiOiJVU0VSIiwiaWF0IjoxNzI2MzkxODMzLCJleHAiOjE3MjY0NzgyMzN9.49rd_ce4IHqMWnsrlZmq0c5rMFJg-m7PLKTsZgKmQnI`}
+    //     redirect={`/auth/naver/callback?code=DKSSUDGKTPDYEWJEKAJFE`}
     //   />
     // ),
   } as const;

@@ -1,10 +1,10 @@
 import { AxiosResponse } from 'axios';
-import { instance } from './axiosInstance';
+import { authInstance, instance, mockInstance } from './axiosInstance';
 import { generateRandomString } from '@/utils/generateRandomString';
 import { AuthType } from '@/types/auth';
 
 const AUTH = {
-  path: '/api/auth',
+  path: '/api/v1/auth',
 
   async authLogin(code: string, provider: string): Promise<AuthType> {
     const state = generateRandomString(10);
@@ -26,6 +26,13 @@ const AUTH = {
       `${AUTH.path}/new-access-token`
     );
     return result.data;
+  },
+
+  async logoutAuthApi(provider: string): Promise<any> {
+    const result: AxiosResponse = await authInstance.post(
+      `${AUTH.path}/${provider}/logout`
+    );
+    return result;
   },
 };
 

@@ -9,8 +9,7 @@ export default function LogoutPage() {
 
   const logoutExecution = async () => {
     const provider = window.localStorage.getItem('provider');
-    //지금은 안됨 주석으로 처리
-    //await AUTH.logoutAuthApi(provider as string);
+    await AUTH.logoutAuthApi(provider as string);
     window.localStorage.removeItem('accessToken');
     window.localStorage.removeItem('provider');
     window.localStorage.removeItem('refreshToken');

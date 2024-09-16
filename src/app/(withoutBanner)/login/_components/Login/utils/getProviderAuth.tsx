@@ -27,7 +27,7 @@ const getPresetProviderAuth = (provider: string) => {
     //   <LoginButton
     //     image="/images/naver_login.png"
     //     provider="네이버 mock 테스트"
-    //     redirect={`/auth/naver/callback?code=djtmdlswmdzhemdlqslek`}
+    //     redirect={`/auth/naver/callback?code=DKSSUDGKTPDYEWJEKAJFE`}
     //   />
     // ),
   } as const;

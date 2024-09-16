@@ -3,7 +3,7 @@ import { http, HttpResponse } from 'msw';
 
 export const authHandler = [
   //로그인 성공 후, naver토큰 저장 요청
-  http.post('/api/auth/naver/login', ({ request, cookies }) => {
+  http.post('/api/v1/auth/naver/login', ({ request, cookies }) => {
     const url = new URL(request.url);
 
     const code = url.searchParams.get('code');
@@ -19,9 +19,10 @@ export const authHandler = [
       });
 
     return HttpResponse.json(null, {
-      headers: {
-        'Set-Cookie': 'authToken="dkssudgktpdywjsmsdlwowlsdlqslek',
-      },
+      headers: new Headers([
+        ['set-Cookie', `accessToken=${process.env.TEST_ACCESSTOKEN}`],
+        ['set-Cookie', `refreshToken=${process.env.TEST_REFRESHTOKEN}`],
+      ]),
       status: 200,
     });
   }),

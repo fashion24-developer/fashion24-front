@@ -3,15 +3,18 @@ import { style } from '@vanilla-extract/css';
 
 export const titleContainer = style({
   display: 'grid',
-  border: `3px solid ${themeColor.color.main}`,
   padding: 10,
   margin: 20,
-  gridTemplateColumns: 'repeat(7, 1fr)',
+  gridTemplateColumns: 'repeat(9, 1fr)',
+  borderBottom: `3px solid ${themeColor.color.main}`,
 });
 
 export const listContainer = style({
-  border: `3px solid ${themeColor.color.main}`,
   display: 'flex',
   flexDirection: 'column',
-  margin: 20,
+});
+
+export const listItem = style({
+  textAlign: 'center',
+  alignContent: 'center',
 });

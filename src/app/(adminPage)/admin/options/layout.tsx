@@ -3,8 +3,7 @@ import AdminSideNavigate from '../_components/SideNavigate';
 import * as styles from '../admin.css';
 
 const optionsSideNAvList = [
-  { id: 'option1', name: '옵션 등록', path: '/admin/options/list' },
-  { id: 'option2', name: '소옵션 등록', path: '/admin/options/sub' },
+  { id: 'option1', name: '옵션 리스트', path: '/admin/options/list' },
 ];
 
 export default function AdminOptions({

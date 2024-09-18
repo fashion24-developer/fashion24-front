@@ -18,7 +18,6 @@ export const navigate = style({
   transition: '0.4s ease',
   color: '#202020',
   height: '100%',
-  width: 280,
   transform: `translateX(${xPositionVar})`,
   zIndex: 99,
 });
@@ -31,7 +30,6 @@ export const content = style({
 export const hamburgerContainer = style({
   position: 'fixed',
   top: 10,
-  bottom: 0,
   right: 10,
   zIndex: 100,
 });
@@ -65,7 +63,6 @@ export const hamburger = style({
 
 globalStyle('li', {
   listStyle: 'none',
-  padding: '10px 0',
 });
 
 globalStyle('a', {

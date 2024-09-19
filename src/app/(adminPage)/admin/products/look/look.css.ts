@@ -7,7 +7,7 @@ export const lookContainer = style({
 
 export const buttonWrapper = style({
   display: 'flex',
-  justifyContent: 'end',
+  justifyContent: 'flex-end',
   marginBottom: 10,
 });
 

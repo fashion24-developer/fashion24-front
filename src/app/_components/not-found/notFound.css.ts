@@ -9,19 +9,20 @@ export const background = style({
   alignItems: 'center',
 });
 
-export const content = style({
-  width: '80%',
-  height: '80%',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-});
-
 export const paper = style({
   position: 'absolute',
-  top: '0',
+  top: '-5%',
 });
 
-export const message_404 = style({});
-
-export const message_notfound = style({});
+export const backBtn = style({
+  width: '400px',
+  height: '85px',
+  backgroundColor: '#D9D9D9',
+  borderRadius: '45px',
+  fontSize: '60px',
+  textAlign: 'center',
+  lineHeight: '85px',
+  marginTop: '30px',
+  border: 'none',
+  cursor: 'pointer',
+});

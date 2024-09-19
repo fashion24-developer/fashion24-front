@@ -1,16 +1,21 @@
 import { themeColor } from '@/app/globalTheme.css';
-import { style } from '@vanilla-extract/css';
+import { createVar, style } from '@vanilla-extract/css';
 
 export const itemContainer = style({
   display: 'grid',
+  gridTemplateColumns: '1fr repeat(8, 0.5fr)',
   padding: 10,
-  margin: 20,
-  gridTemplateColumns: 'repeat(9, 1fr)',
-  borderBottom: `3px solid ${themeColor.color.option}`,
+  transition: 'all 0.2s ease-in-out',
+  borderRadius: 15,
+  cursor: 'pointer',
+  ':hover': {
+    backgroundColor: `rgba(194, 194, 194, 0.25)`,
+  },
 });
 
 export const contentItem = style({
-  textAlign: 'center',
+  fontSize: 12,
+  textAlign: 'start',
   alignContent: 'center',
 });
 
@@ -22,16 +27,34 @@ export const changeEventList = style({
   margin: 0,
 });
 
-export const contentButton = style({
-  textAlign: 'center',
-  alignContent: 'center',
-  backgroundColor: `#ffffff`,
-  padding: 5,
+export const optionTagContainer = style({
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+});
+
+export const optionItem = style({
+  backgroundColor: `rgba(0,0,0,0.15)`,
   borderRadius: 5,
+  padding: '2px 3px',
+  margin: 2,
+});
+
+export const tagItem = style({
+  padding: '2px 3px',
+  margin: 2,
+});
+
+export const buttonBgVar = createVar();
+export const buttonColorVar = createVar();
+export const contentButton = style({
+  backgroundColor: buttonBgVar,
+  textAlign: 'center',
+  border: 'none',
+  padding: '2px 4px',
+  alignContent: 'center',
+  borderRadius: 10,
   cursor: 'pointer',
-  ':hover': {
-    backgroundColor: themeColor.color.option,
-    transition: 'all 0.2s ease-in-out',
-    color: `#ffffff`,
-  },
+  color: buttonColorVar,
+  margin: '0 5px',
 });

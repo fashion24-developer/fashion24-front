@@ -1,19 +1,24 @@
 import { themeColor } from '@/app/globalTheme.css';
-import { style } from '@vanilla-extract/css';
+import { createVar, style } from '@vanilla-extract/css';
 
 export const container = style({
   flex: 1,
-  maxWidth: 300,
+  maxWidth: 360,
   height: '100dvh',
-  backgroundColor: themeColor.color.basic,
+  borderRight: `1px solid rgba(0,0,0,0.2)`,
 });
 
+export const listContainer = style({
+  margin: '25px 5px',
+});
+
+export const pickListVar = createVar();
 export const list = style({
   padding: 10,
-  margin: 5,
-  border: `1px solid ${themeColor.color.basic}`,
+  borderRadius: 12,
+  color: pickListVar,
+  transition: 'all 0.2s ease-in-out',
   ':hover': {
-    border: `1px solid ${themeColor.color.main}`,
-    color: themeColor.color.main,
+    backgroundColor: 'rgba(194, 194, 194, 0.25)',
   },
 });

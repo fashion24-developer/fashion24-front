@@ -4,7 +4,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import * as styles from './checkBox.css';
 import { useAtom } from 'jotai';
 import { checkBoxAtom } from '@/jotai/atoms/uiAtom';
-import { CheckStateType } from '@/app/(withoutBanner)/cart/_components/CartItem';
+import { CheckStateType } from '@/app/(enableNavigate)/(withoutBanner)/cart/_components/CartItem';
 
 interface CheckBoxProps<T> {
   all: boolean;

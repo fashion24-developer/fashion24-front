@@ -28,7 +28,6 @@
     ".next/types/**/*.ts",
     "public/server.js",
     "server.js"
-    // "declaration.d.ts"
   ],
   "exclude": ["node_modules"]
 }

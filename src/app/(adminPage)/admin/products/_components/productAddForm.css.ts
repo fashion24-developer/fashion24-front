@@ -23,7 +23,7 @@ export const description = style({
 export const submitButtonContainer = style({
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'end',
+  justifyContent: 'flex-end',
   marginTop: 20,
 });
 

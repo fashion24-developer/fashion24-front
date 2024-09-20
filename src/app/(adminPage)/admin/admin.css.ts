@@ -1,31 +1,44 @@
-import { background } from '@/app/_components/nav/navigate.css';
 import { themeColor } from '@/app/globalTheme.css';
-import { globalStyle, style } from '@vanilla-extract/css';
-import { color } from 'framer-motion';
+import { style } from '@vanilla-extract/css';
 
-export const headerContainer = style({
+export const navHeader = style({
+  borderBottom: `1px solid rgba(0,0,0,0.2)`,
   display: 'flex',
   flexDirection: 'row',
-  backgroundColor: themeColor.color.main,
+  alignItems: 'center',
+  padding: '1% 3%',
 });
 
-export const navigate = style({
+export const listContainer = style({
   display: 'flex',
   flexDirection: 'row',
-  listStyle: 'none',
-  border: `2px solid ${themeColor.color.main}`,
+  gap: 25,
+  marginLeft: '5%',
+  fontSize: 15,
 });
 
-export const navItem = style({
-  listStyle: 'none',
-  padding: 10,
-  border: `2px solid ${themeColor.color.main}`,
-  margin: 1,
+export const headerRight = style({
+  marginLeft: 'auto',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+});
+
+export const backMainLink = style({
+  color: themeColor.color.main,
+  width: 160,
   cursor: 'pointer',
-  ':hover': {
-    backgroundColor: themeColor.color.main,
-    color: '#ffffff',
-  },
+});
+
+export const profile = style({
+  display: 'inline-block',
+  border: '1px solid black',
+  borderRadius: '50%',
+  width: 35,
+  height: 35,
+  backgroundColor: 'gray',
+  marginLeft: '2%',
+  cursor: 'pointer',
 });
 
 export const sideContainer = style({

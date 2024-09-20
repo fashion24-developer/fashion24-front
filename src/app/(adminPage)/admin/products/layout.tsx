@@ -10,13 +10,16 @@ const productSideNavList = [
 
 export default function AdminProducts({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <div className={styles.sideContainer}>
       <AdminSideNavigate list={productSideNavList} />
       <main className={styles.contentContainer}>{children}</main>
+      {modal}
     </div>
   );
 }

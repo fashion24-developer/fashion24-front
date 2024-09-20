@@ -2,7 +2,6 @@
 
 import { useRouter } from 'next/navigation';
 import * as styles from './productListItem.css';
-import { name } from '@/app/(withoutBanner)/cart/@modal/(.)options/optionModal.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 
 export default function ProductListItem() {

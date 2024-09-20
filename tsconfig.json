@@ -27,8 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "public/server.js",
-    "server.js",
-    "/src/types/declaration.d.ts"
+    "server.js"
   ],
   "exclude": ["node_modules"]
 }

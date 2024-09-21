@@ -56,3 +56,12 @@ globalStyle('*', {
   padding: 0,
   boxSizing: 'border-box',
 });
+
+globalStyle('li', {
+  listStyle: 'none',
+});
+
+globalStyle('a', {
+  textDecoration: 'none',
+  color: 'inherit',
+});

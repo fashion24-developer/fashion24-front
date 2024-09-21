@@ -19,6 +19,14 @@ export default function ProductListItem() {
     date: '2024-09-13 : 13:00',
   };
 
+  const modifyItemHandler = () => {};
+
+  const deleteItemHandler = () => {
+    if (confirm('정말로 삭제 하시겠습니까?')) {
+      //delete item api
+    }
+  };
+
   return (
     <ul className={styles.itemContainer}>
       <li className={styles.contentItem}>{dummy.id}</li>
@@ -39,7 +47,7 @@ export default function ProductListItem() {
       <li className={styles.contentItem}>{dummy.date}</li>
       <li className={styles.contentItem}>
         <button
-          onClick={() => router.push(`/admin/products/option/${dummy.id}`)}
+          onClick={modifyItemHandler}
           className={styles.contentButton}
           style={assignInlineVars({
             [styles.buttonBgVar]: 'rgba(5, 102, 221, 0.15)',
@@ -49,7 +57,7 @@ export default function ProductListItem() {
           수정
         </button>
         <button
-          onClick={() => router.push(`/admin/products/option/${dummy.id}`)}
+          onClick={deleteItemHandler}
           className={styles.contentButton}
           style={assignInlineVars({
             [styles.buttonBgVar]: 'rgba(221, 5, 5, 0.15)',

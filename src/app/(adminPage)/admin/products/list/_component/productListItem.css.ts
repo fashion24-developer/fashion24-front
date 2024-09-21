@@ -1,4 +1,3 @@
-import { themeColor } from '@/app/globalTheme.css';
 import { createVar, style } from '@vanilla-extract/css';
 
 export const itemContainer = style({
@@ -7,7 +6,6 @@ export const itemContainer = style({
   padding: 10,
   transition: 'all 0.2s ease-in-out',
   borderRadius: 15,
-  cursor: 'pointer',
   ':hover': {
     backgroundColor: `rgba(194, 194, 194, 0.25)`,
   },

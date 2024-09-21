@@ -17,7 +17,7 @@ export const addButton = style({
   border: 'none',
   borderRadius: 5,
   cursor: 'pointer',
-  padding: '3px 5px',
+  padding: '5px 10px',
   backgroundColor: `rgba(221, 5, 5, 0.1)`,
   color: `rgba(221, 5, 5, 1)`,
   ':hover': {

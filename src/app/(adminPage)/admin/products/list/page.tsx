@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ProductListItem from './_component/productListItem';
 import * as styles from './productList.css';
 
@@ -6,7 +7,9 @@ export default function AdminProductsList() {
     <>
       <h3 className={styles.listTitle}>상품 리스트</h3>
       <div className={styles.addButtonContainer}>
-        <button className={styles.addButton}>+상품등록</button>
+        <Link href={'/admin/products/list/add'} className={styles.addButton}>
+          +상품등록
+        </Link>
       </div>
       <div className={styles.contentContainer}>
         <ul className={styles.titleContainer}>

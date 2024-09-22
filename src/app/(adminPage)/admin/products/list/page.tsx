@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import ProductListItem from './_component/productListItem';
+import ProductListItem from './_component/ProductListItem';
 import * as styles from './productList.css';
+import ProductList from './_component/ProductList';
 
 export default function AdminProductsList() {
   return (
@@ -23,12 +24,7 @@ export default function AdminProductsList() {
           <li className={styles.listItem}>등록일</li>
           <li className={styles.listItem}>수정/삭제</li>
         </ul>
-        <ul className={styles.listContainer}>
-          <ProductListItem />
-          <ProductListItem />
-          <ProductListItem />
-          <ProductListItem />
-        </ul>
+        <ProductList />
       </div>
     </>
   );

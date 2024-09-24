@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import * as styles from './productListItem.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 
-export default function ProductListItem() {
+export default function ProductListItem({ num }: { num: string }) {
   const router = useRouter();
 
   const dummy = {
@@ -29,7 +29,7 @@ export default function ProductListItem() {
 
   return (
     <ul className={styles.itemContainer}>
-      <li className={styles.contentItem}>{dummy.id}</li>
+      <li className={styles.contentItem}>{dummy.id + num}</li>
       <li className={styles.contentItem}>{dummy.name}</li>
       <li className={styles.contentItem}>{dummy.price}</li>
       <li className={styles.contentItem}>{dummy.status}</li>

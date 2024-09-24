@@ -36,11 +36,6 @@ export const titleContainer = style({
   padding: 10,
 });
 
-export const listContainer = style({
-  display: 'flex',
-  flexDirection: 'column',
-});
-
 export const listItem = style({
   textAlign: 'center',
   alignContent: 'center',

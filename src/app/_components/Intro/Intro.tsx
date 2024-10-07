@@ -17,12 +17,8 @@ export default function Intro() {
         <Image
           width={786}
           height={150}
-          src={logoIcon}
+          src="/images/intro_logo.webp"
           alt="intro_logo"
-          style={{
-            filter:
-              'invert(14%) sepia(100%) saturate(7483%) hue-rotate(355deg) brightness(95%) contrast(119%)',
-          }}
         />
       </motion.header>
       <motion.figure

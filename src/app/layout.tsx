@@ -1,13 +1,7 @@
 import type { Metadata } from 'next';
 import MSWProvider from '@/app/_components/common/MswProvider';
 import JotaiProvider from '@/app/_components/common/JotaiProvider';
-import NavigateBar from './_components/nav/Navigate';
-import localFont from 'next/font/local';
-
-const myFont = localFont({
-  src: './fonts/Analogist.ttf',
-  display: 'swap',
-});
+import GlobalLayout from './_components/layout/GlobalLayout';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,10 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={myFont.className}>
-      <body>
+    <html lang="en">
+      <body style={{ margin: 0 }}>
         <JotaiProvider>
-          <MSWProvider>{children}</MSWProvider>
+          <MSWProvider>
+            <GlobalLayout>{children}</GlobalLayout>
+          </MSWProvider>
         </JotaiProvider>
       </body>
     </html>

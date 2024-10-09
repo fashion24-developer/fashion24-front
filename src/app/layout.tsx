@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import MSWProvider from '@/app/_components/common/MswProvider';
 import JotaiProvider from '@/app/_components/common/JotaiProvider';
 import GlobalLayout from './_components/layout/GlobalLayout';
+import AuthProvider from './_components/common/AuthProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: 0 }}>
-        <JotaiProvider>
-          <MSWProvider>
-            <GlobalLayout>{children}</GlobalLayout>
-          </MSWProvider>
-        </JotaiProvider>
+        <AuthProvider>
+          <JotaiProvider>
+            <MSWProvider>
+              <GlobalLayout>{children}</GlobalLayout>
+            </MSWProvider>
+          </JotaiProvider>
+        </AuthProvider>
       </body>
     </html>
   );

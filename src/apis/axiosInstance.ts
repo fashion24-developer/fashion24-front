@@ -31,7 +31,7 @@ const instance = axios.create({
 
 //로그인이 필요한 인스턴스
 const authInstance = axios.create({
-  baseURL: `${process.env.AUTH_URL}`,
+  baseURL: `${process.env.NEXT_PUBLIC_AUTH_URL}`,
   headers: {
     'Content-Type': 'application/json', //"multipart/form-data": 파일 업로드 형식
     'Access-Control-Allow-Origin': '*',

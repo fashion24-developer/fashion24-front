@@ -1,6 +1,6 @@
 import ButtonWithImage from '@/components/Button/ButtonWithImage';
 
-export const getSignInProvider = (provider: string) => {
+export const getSignInProvider = (provider: 'kakao' | 'naver' | 'google') => {
   const obj: { readonly [key: string]: JSX.Element } = {
     kakao: (
       <ButtonWithImage

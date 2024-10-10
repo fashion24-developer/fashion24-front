@@ -7,7 +7,6 @@ export default async function CallBack({
 }) {
   const provider = params.provider[0];
 
-  console.log(provider);
   return (
     <>
       <ProviderToken provider={provider} />

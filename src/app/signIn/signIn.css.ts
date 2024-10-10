@@ -9,6 +9,5 @@ export const signInContainer = style({
 });
 
 export const logoWrapper = style({
-  display: 'inline-block',
   marginBottom: 60,
 });

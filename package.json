@@ -26,7 +26,7 @@
     "node": "20.14.0"
   },
   "scripts": {
-    "dev": "env-cmd -f .env.development next dev",
+    "dev": "env-cmd -f .env.local next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

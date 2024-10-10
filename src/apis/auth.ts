@@ -6,23 +6,14 @@ import { AuthType } from '@/types/auth';
 const AUTH = {
   path: '/api/v1/auth',
 
-  async authLogin(code: string, provider: string): Promise<AuthType> {
-    const state = generateRandomString(10);
+  async postAuthLogin(code: string, provider: string): Promise<AuthType> {
     const result: AxiosResponse = await instance.post(
-      `${AUTH.path}/${provider}/login`,
-      {
-        state: state,
-      },
-      {
-        params: {
-          code: code,
-        },
-      }
+      `${AUTH.path}/${provider}/login?code=${code}`
     );
     return result.data;
   },
   async refreshAuth(): Promise<{ accessToken: string }> {
-    const result: AxiosResponse = await instance.get(
+    const result: AxiosResponse = await authInstance.get(
       `${AUTH.path}/new-access-token`
     );
     return result.data;

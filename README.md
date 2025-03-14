@@ -7,6 +7,10 @@
 
 - 기획자, 디자이너, 개발자가 소통을 위한, Miro, Figma 사이트 활용
 
+[storybook](https://6693afe94b0867d347a296d1-fvtkjabcmr.chromatic.com/?path=/docs/components-carousel--docs)
+
+- 개발자 디자이너간 효율적입 소통 및 생산성 향상을 위한 stroybook 구축
+
 ## 중단
 
 - 현재 해당 프로젝트는 중단된 상태입니다.

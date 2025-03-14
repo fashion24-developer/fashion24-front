@@ -1,5 +1,16 @@
 # fashion24-frontEnd
 
+- 패션과 주얼리를 섞은 형태의 쇼핑몰 사이트 구축
+
+![스크린샷 2025-03-14 154731](https://github.com/user-attachments/assets/ca91aaa3-84b8-4c70-ab04-230a688fb717)
+![스크린샷 2025-03-14 155134](https://github.com/user-attachments/assets/3ed1fa90-a6d1-4bf7-a937-c48fef07da12)
+
+- 기획자, 디자이너, 개발자가 소통을 위한, Miro, Figma 사이트 활용
+
+## 중단
+
+- 현재 해당 프로젝트는 중단된 상태입니다.
+
 ## 커밋 컨벤션
 
 ```
